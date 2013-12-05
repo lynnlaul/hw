@@ -1,0 +1,49 @@
+GROUP(-lgcc -lgs -lhs -lc)
+
+MEMORY
+{
+
+  rom(rx)    : ORIGIN = 0x2000000, LENGTH = 400k
+  
+}
+
+ENTRY(_start)
+SECTIONS
+{
+	
+	.text :
+  	{
+  		*(.text)
+  	 	etext  =  .;
+    	. = ALIGN(4);
+     	 *(.rodata)
+  		*(.rodata.str1.4)
+  		*(.glue_7t)
+		*(.glue_7)
+     _etext = .;
+  } > rom
+  
+ 
+  .data :
+  	AT(_etext)	
+  {
+    _data = .;
+    . = ALIGN(4);
+    *(.data)
+    _edata = .;
+  } > rom
+
+
+  .bss :
+  {
+	_start_bss = .;
+	. = ALIGN(4);
+	
+	*(.bss)
+    *(COMMON)
+        _end_bss = .;
+  } > rom
+	end = .;                           
+	_end = .;   
+
+}

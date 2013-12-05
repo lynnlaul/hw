@@ -1,7 +1,7 @@
-/*===============================================================================
+﻿/*===============================================================================
   红外抄表程序
 
-	
+
 ===============================================================================*/
 #include <hspos.h>
 
@@ -36,9 +36,9 @@ int main(void)
 {
 	 int r,rt;
 	 uchar k;
-	 
+
 	 screen(1); 			 /* 设定为汉字显示状态 */
-	 while(1){	   
+	 while(1){
 		 cls();moveto(15,14);  putstr("   ");
 		 moveto(1, 3);		  putstr("红外测试程序");
 		 moveto(3, 1);	   putstr("====================");
@@ -51,8 +51,8 @@ int main(void)
 			 //case '1':cbtype=1;break;
 			 case '2':break;
 			 case 0x89:return;
-		} 
-		while(1){	   
+		}
+		while(1){
 			cls();moveto(15,14);	putstr("   ");
 			moveto(1, 3); 	   putstr("红外测试程序");
 			moveto(3, 1); 	putstr("====================");
@@ -73,7 +73,7 @@ int main(void)
 }
 void hwcb(){
 	int k=0;
-	while(1){	   
+	while(1){
 		cls();moveto(15,14);	putstr("   ");
 		moveto(1, 3); 	   putstr("红外测试程序");
 		moveto(3, 1); 	putstr("====================");
@@ -106,7 +106,7 @@ void inputaddr(){
 	for(i=0;i!=12;i++){
 		if (Saddr[i]==0x20||(Saddr[i]>0x2F&&Saddr[i]<0x3A)||Saddr[i]==0x41||Saddr[i]==0x61){
 			continue;//print_info(i);
-		}	
+		}
 		else{
 			cls();
 			moveto(8,2); putstr("电表地址不合法！");
@@ -163,24 +163,24 @@ void inputaddr(){
 		k=key(0);
 		if(k=='1'){
 			 goto end;
-		}	 
+		}
 		else if(k=='2'||k==0x8d){
 		goto start;
 		}
 		goto timeout;
 	}
-dataerro:	 
+dataerro:
 	 cls();
 	 putstr("\n盏肀?);
 	 putstr("\n欠");
 	 putstr("\n1.");
 	 putstr("\n2.(爻)");
- 
+
 	while(key(0)==0){
 		k=key(0);
 		if(k=='1'){
 			 goto end;
-		}	 
+		}
 		else if(k=='2'||k==0x8d){
 		goto start;
 		}
@@ -192,14 +192,14 @@ setseussful:
 	 putstr("\n..");
 	 while(key==0)
 	 goto end;
-	 
+
 havanotdata:
 	 cls();
 	 putstr("\n薮睿?);
 	 putstr("\n..");
 	 while(key==0)
 	 goto end;
- 
+
 setfail:
 	 cls();
 	 putstr("\n失埽");
@@ -266,7 +266,7 @@ void print_info(int i ){
    函数 : 发送07规约读电能表报文，datafalg为数据标识。电表地址为全局变量Saddr[6]
  =======================================================================*/
  void ir_11_data_07(uchar *dataflag)
- {	 
+ {
 	long int cs;
 	int i;
 	ir_init(B1200,0x2B,UART_ON);
@@ -350,17 +350,18 @@ void ir_14_data_07(int *dataflag)
 	 ir_write(0x16);delay(400);
 }
  /*==============================================================================
- 
+
  红外接收07电能表数据，数据长度存于全局变量datal，数据存于全局变量data[]。
- 
+ 返回抄读结果标识：0，抄读成功；1设置成功；2无此数据项；3设置失败；4接收数据错误；5接收超时
+
  ==============================================================================*/
-uchar ir_read_data_07(){
+int ir_read_data_07(){
 	 int xh=0,i=0,x=0,yanshi=0;
 	 uchar k;
 start:
 //	cls();putstr("\n正在接收...");
 	while (xh==0) {
-		if(ir_rxstate()!=0){	  
+		if(ir_rxstate()!=0){
 			data[i]=ir_rxbuf();
 			while(data[i]==0xfe){
 				i++;
@@ -368,22 +369,20 @@ start:
 			if((data[i]==0x68)&&(data[i+7]==0x68)){
 				switch (data[i+8]){
 					 case 0x91: break;
-					 case 0x94: goto setseussful;
-					 case 0xd1: goto havanotdata;
-					 case 0xd4: goto setfail;
-				 default: goto dataerro;
+					 case 0x94: return 1;
+					 case 0xd1: return 2;
+					 case 0xd4: return 3;
+				 default: return 4;
 				}//检查控制字
 				 datal = data[i+9]-4;//检查数据长度
 				 for(x=0;x<datal;x++){
 					 data[x]=data[i+13];
 				}
-				goto end;//返回数据
+				return  0;//返回数据
+			}else{
+				return 1;
 			}
-			else{
-				goto dataerro;
-			}
-		}
-		else{
+		}else{
 			yanshi++;
 			delayms(2);
 		}
@@ -392,7 +391,7 @@ start:
 			print_info(yanshi);
 		}
 	}
-
+	return 5;
 }
 /*=================================================================================
 函数:	红外通讯
@@ -434,7 +433,7 @@ start:
 //		   		byanshi=0;
 //		   		}
 //		   		if(rt!=0&&i>=15+l)  {xh=1;} //15
-		   		 
+
 //		   	}
 //		   	else
 //		   	{
@@ -465,7 +464,7 @@ start:
 //		   		byanshi=0;
 //		   		}
 //		   		if(rt!=0&&i>=15+l)  {xh=1;} //15
-		   		
+
 //		   	}
 //		   	else
 //		   	{
@@ -490,7 +489,7 @@ start:
 //	}
 //	while(cs>256)
 //	{cs=cs-256;}
-       
+
 //	if((data[10+l]==cs)&&(data[8]==0x91))
 //		{
 //		resu[0]='9';resu[1]=0;
@@ -510,7 +509,7 @@ start:
 
 
  /*===============================================================================
-函数:	从键盘接收一串全高数字字符,带回显,存放在cdata 
+函数:	从键盘接收一串全高数字字符,带回显,存放在cdata
 参数:	入口: n1为欲显示的原cdata中数据的长度,n2为最多允许接收的数据长度,reg为0时只可接收数字,为1时可接收字母,运算符等
 返回:	出口: 返回接收字符串的长度,字符串为空时返回0(若按下数值键后再按功能键,则把功能键值存放在cdata[2],若首先就按下功能键,则把该键值存放在cdata[1]
 ===============================================================================*/
@@ -570,7 +569,7 @@ start:
 //				 if(k==0x8d)
 //				 {
 //					 cdata[i1]=0;
-					 
+
 //					 f=i1;
 //				}
 //				 else
@@ -603,7 +602,7 @@ start:
 //	}while(1);
 //}
 
- 
+
 //void dleay1(void){
 //	long int i;
 //	i=yanshi*1667;

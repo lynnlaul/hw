@@ -1,0 +1,1562 @@
+Archive member included because of file (symbol)
+
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libgs.a(hspos.o)
+                              main.o (key)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libgs.a(config.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libgs.a(hspos.o) (save_page_circle)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libgs.a(pospy.o)
+                              main.o (keysn)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(com.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libgs.a(hspos.o) (open_rs232)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(target.o)
+                              crt0.o (TargetResetInit)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(lcd.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libgs.a(hspos.o) (lcd_wr_ch8)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(key.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(target.o) (disable_beep)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(sst6401b.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libgs.a(config.o) (setor_erase)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(tm.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libgs.a(pospy.o) (is_timer_over)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(pwr.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(key.o) (stop_mode_ent)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(comex.o)
+                              main.o (ir_write)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(printer.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(pwr.o) (AdcRead)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(asc24.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(printer.o) (AsciiArray)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(abs.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libgs.a(hspos.o) (abs)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(atoi.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libgs.a(hspos.o) (atoi)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(memcmp.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libgs.a(pospy.o) (memcmp)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(memcpy.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libgs.a(hspos.o) (memcpy)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(memset.o)
+                              main.o (memset)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(sprintf.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libgs.a(hspos.o) (sprintf)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(strcat.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libgs.a(pospy.o) (strcat)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(strcpy.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(strcat.o) (strcpy)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(strlen.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libgs.a(hspos.o) (strlen)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(strtol.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(atoi.o) (strtol)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(vfprintf.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(sprintf.o) (vfprintf)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(vsprintf.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(com.o) (vsprintf)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(wsetup.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(vfprintf.o) (__swsetup)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(ctype_.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(strtol.o) (_ctype_)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(dtoa.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(vfprintf.o) (_dtoa_r)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(fflush.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(vfprintf.o) (fflush)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(findfp.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(vfprintf.o) (__sinit)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(freer.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(wsetup.o) (_free_r)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(fvwrite.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(vfprintf.o) (__sfvwrite)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(fwalk.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(fflush.o) (_fwalk)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(impure.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(sprintf.o) (_impure_ptr)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(locale.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(vfprintf.o) (__mb_cur_max)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(makebuf.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(wsetup.o) (__smakebuf)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(mallocr.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(freer.o) (__malloc_av_)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(mbtowc_r.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(vfprintf.o) (_mbtowc_r)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(memchr.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(vfprintf.o) (memchr)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(memmove.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(fvwrite.o) (memmove)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(mlock.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(freer.o) (__malloc_lock)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(mprec.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(dtoa.o) (_Balloc)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(reallocr.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(fvwrite.o) (_realloc_r)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(s_isinf.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(vfprintf.o) (isinf)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(s_isnan.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(vfprintf.o) (isnan)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(sbrkr.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(freer.o) (_sbrk_r)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(stdio.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(findfp.o) (__sread)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(strcmp.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(locale.o) (strcmp)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(syscalls.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(sbrkr.o) (_sbrk)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(writer.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(stdio.o) (_write_r)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(callocr.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(mprec.o) (_calloc_r)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(closer.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(stdio.o) (_close_r)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(errno.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(syscalls.o) (__errno)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(fstatr.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(makebuf.o) (_fstat_r)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(lseekr.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(stdio.o) (_lseek_r)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(readr.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(stdio.o) (_read_r)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(reent.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(sbrkr.o) (errno)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_udivsi3.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(strtol.o) (__udivsi3)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_divsi3.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libgs.a(hspos.o) (__divsi3)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_umodsi3.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(strtol.o) (__umodsi3)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_dvmd_tls.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_udivsi3.o) (__div0)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_udivdi3.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(vfprintf.o) (__udivdi3)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_umoddi3.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(vfprintf.o) (__umoddi3)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_addsub_df.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libgs.a(hspos.o) (__adddf3)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_mul_df.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libgs.a(hspos.o) (__muldf3)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_div_df.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libgs.a(hspos.o) (__divdf3)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_eq_df.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(vfprintf.o) (__eqdf2)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_ne_df.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(vfprintf.o) (__nedf2)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_gt_df.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(dtoa.o) (__gtdf2)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_ge_df.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(dtoa.o) (__gedf2)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_lt_df.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(vfprintf.o) (__ltdf2)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_si_to_df.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libgs.a(hspos.o) (__floatsidf)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_df_to_si.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(com.o) (__fixdfsi)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_negate_df.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(vfprintf.o) (__negdf2)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_thenan_df.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_addsub_df.o) (__thenan_df)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_lshrdi3.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_df_to_si.o) (__lshrdi3)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_clz.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_udivdi3.o) (__clz_tab)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_pack_df.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_addsub_df.o) (__pack_d)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_unpack_df.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_addsub_df.o) (__unpack_d)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_fpcmp_parts_df.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_eq_df.o) (__fpcmp_parts_d)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_ashldi3.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_pack_df.o) (__ashldi3)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libgs.a(filecore.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(lcd.o) (fs_init)
+/cygdrive/d/ADS/BIN/../arm-elf/lib/libgs.a(filedef.o)
+                              /cygdrive/d/ADS/BIN/../arm-elf/lib/libgs.a(filecore.o) (s_CheckFlash)
+
+Allocating common symbols
+Common symbol       size              file
+
+DrvTime             0x4               /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(printer.o)
+FeedMotoStat        0x1               /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(printer.o)
+Spx                 0x4               /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(printer.o)
+sys_clk             0x4               /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(target.o)
+errno               0x4               /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(reent.o)
+iTickRead           0x4               /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(target.o)
+Saddr               0xc               main.o
+Iaddr               0x18              main.o
+PrnCurHigh          0x1               /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(printer.o)
+PrnPhase            0x4               /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(printer.o)
+StepForward         0x1               /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(printer.o)
+PrnStates           0x1               /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(printer.o)
+StrobeTime          0x2               /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(printer.o)
+Prny                0x4               /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(printer.o)
+HzSize              0x1               /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(printer.o)
+PrnFeed             0x2d              /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(printer.o)
+data                0x18c             main.o
+sLcdBuf             0xc80             /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(lcd.o)
+Prnx                0x4               /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(printer.o)
+iBeepCnt            0x4               /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(target.o)
+bios_flag           0x4               /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(target.o)
+fg_tmuse            0x4               /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(target.o)
+iTickCnt            0x4               /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(target.o)
+PrnBuf              0xca80            /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(printer.o)
+Spy                 0x4               /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(printer.o)
+slcdbufbak          0xc80             /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(lcd.o)
+datal               0x4               main.o
+AscSize             0x1               /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(printer.o)
+MCLK                0x4               /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(target.o)
+l_tm_wait           0x100             /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(target.o)
+fg_tm_clk           0x4               /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(target.o)
+bios_cnt            0x28              /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(target.o)
+bios_data           0x28              /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(target.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+rom              0x02000000         0x00064000         xr
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD crt0.o
+LOAD main.o
+START GROUP
+LOAD /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a
+LOAD /cygdrive/d/ADS/BIN/../arm-elf/lib/libgs.a
+LOAD /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a
+LOAD /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a
+END GROUP
+
+.text           0x02000000    0x220dc
+ *(.text)
+ .text          0x02000000      0x11c crt0.o
+                0x02000000                _start
+ .text          0x0200011c      0xcd4 main.o
+                0x02000860                print_info
+                0x02000444                inputaddr
+                0x02000378                choosecase
+                0x02000cb0                ir_read_data_07
+                0x02000a64                ir_14_data_07
+                0x0200011c                main
+                0x020002a4                hwcb
+                0x02000888                ir_11_data_07
+                0x020005d0                char2int
+ .text          0x02000df0      0xc1c /cygdrive/d/ADS/BIN/../arm-elf/lib/libgs.a(hspos.o)
+                0x0200183c                EEROM_write
+                0x02000df0                drawline
+                0x02001928                get_lib_version
+                0x02001194                putstr
+                0x020011e0                puts
+                0x0200106c                screen
+                0x0200171c                sram_read
+                0x02001264                putch_h
+                0x02001464                drawrect
+                0x0200162c                CPU_close_enbale
+                0x02001118                gety
+                0x02001140                putch
+                0x0200122c                putn
+                0x0200107c                moveto
+                0x020012b8                putn_h
+                0x02000ee4                strtod
+                0x020015d4                Uart0_Init
+                0x0200151c                stoi
+                0x02001908                get_hpos_sn
+                0x02001438                putstr_xs
+                0x02001400                putchhex
+                0x02000ffc                key
+                0x0200132c                putstr_x
+                0x020016b8                sram_write
+                0x020018e4                delay
+                0x02001670                ir_init
+                0x020018d8                Delayus
+                0x0200103c                keygo
+                0x02001788                EEROM_read
+                0x02001560                ltoa
+                0x020014e8                itos
+                0x02001294                putstr_h
+                0x02001478                cominit
+                0x02001904                exit
+                0x020012c8                putch_x
+                0x02001384                putn_x
+                0x02001594                doubletoasc
+                0x020013c8                putch_xs
+                0x020010f0                getx
+ .text          0x02001a0c      0x224 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgs.a(config.o)
+                0x02001a0c                save_page_circle
+                0x02001c04                Config_inf_write
+                0x02001ac4                read_page_circle
+                0x02001b6c                Config_inf_read
+ .text          0x02001c30     0x14ac /cygdrive/d/ADS/BIN/../arm-elf/lib/libgs.a(pospy.o)
+                0x02002f70                is_pinyinkey
+                0x02003094                keysn
+                0x02002eec                str_max_get
+                0x02001c30                key_str
+                0x02002fc0                en_py_gen_hz_num
+                0x02003078                keys
+                0x020020a0                get_hz
+ .text          0x020030dc      0x784 /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(com.o)
+                0x020033ac                sel_com
+                0x02003554                get_com_char
+                0x020033f4                com_resume
+                0x020030dc                open_rs232
+                0x020036f0                send_com_str
+                0x02003414                close_rs232
+                0x020034d4                send_com_char
+                0x02003790                com_printf
+                0x0200363c                clear_com
+                0x020035d0                have_com_char
+ .text          0x02003860      0x878 /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(target.o)
+                0x02003ed8                delayms
+                0x02003d68                PllValueCtrl
+                0x02003aa8                enable
+                0x020039f8                Port_Init
+                0x02004034                reboot
+                0x02003ab8                disable
+                0x02003d64                call_nop
+                0x02003cf4                Isr_Init
+                0x02003860                TargetResetInit
+                0x02003e34                delayus
+                0x02003d2c                cach_flushing
+                0x02003ac8                HaltAbort
+ .text          0x020040d8     0x1d40 /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(lcd.o)
+                0x020059c4                get_lcd_y
+                0x02005b20                my_printf
+                0x02005880                lcd_clrline
+                0x02005ca8                api_init
+                0x020053b0                lcd_wr_rec
+                0x02004604                lcd_wr_ch8
+                0x02005aa0                lcd_printf
+                0x02005a44                lcd_gray
+                0x02005980                lcd_x_add
+                0x02005b8c                setdot
+                0x02005b60                my_sprintf
+                0x02005ae0                scr_printf
+                0x020055e0                restore_screen
+                0x02005a0c                slcd_buf
+                0x020047c4                fix_hzdot
+                0x02005678                scrfont
+                0x02005588                store_screen
+                0x02005704                lcd_init
+                0x02005c54                dp_bmp
+                0x020058e4                clsn
+                0x02004890                lcd_wr_hz16
+                0x020059d4                lcd_clr_dot_line
+                0x02005638                cls
+                0x020059b4                get_lcd_x
+                0x02005bf0                clrdot
+                0x020040d8                out_dtbit
+                0x02005964                lcd_goto_dot_xy
+ .text          0x02005e18      0xaa4 /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(key.o)
+                0x02005e54                ExInt4567Done
+                0x020064bc                set_idle_key
+                0x02005ea4                KeyScan
+                0x020064a8                is_beep_on
+                0x02006664                kbhit
+                0x0200656c                Beep
+                0x02006684                getch
+                0x02006718                bell
+                0x020066f0                kb_press_key
+                0x02005f54                key_changkey
+                0x02005e18                ExInt3Done
+                0x020061e0                sys_intr_scan
+                0x020063d8                enable_beep
+                0x0200644c                disable_beep
+                0x020067f0                beep
+                0x02006634                user_action
+                0x0200652c                pow_ctrl
+ .text          0x020068bc      0x428 /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(sst6401b.o)
+                0x02006b8c                block_program
+                0x02006b24                flash_block_erase
+                0x02006af4                setor_erase
+                0x02006c80                block_write
+                0x02006b54                word_program
+ .text          0x02006ce4      0x97c /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(tm.o)
+                0x02006f9c                init_sys_clk
+                0x02007130                set_timer
+                0x020070f4                req_timer
+                0x02006ce4                Rtc_Tick
+                0x0200748c                get_datetime
+                0x02007238                free_timer
+                0x02006f18                init_second_tick
+                0x02006dac                Timer0Done
+                0x02006d6c                Timer1Done
+                0x020072bc                getdate
+                0x02007468                setweek
+                0x020073c8                setdate
+                0x02007340                settime
+                0x020070b0                get_now_usclk
+                0x02007070                get_now_clk
+                0x0200731c                getweek
+                0x0200725c                gettime
+                0x02006f68                have_second_tick
+                0x0200753c                use_stop_switch
+                0x02006dfc                is_timer_over
+ .text          0x02007660      0x588 /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(pwr.o)
+                0x02007b90                ReadPowerVolt
+                0x02007ab4                set_bios_data
+                0x02007af4                stop_port_set
+                0x02007660                stop_mode_ent
+                0x02007be0                PowerOff
+ .text          0x02007be8      0x7b8 /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(comex.o)
+                0x02007fe8                comm_init
+                0x02007ff8                combuf
+                0x02008114                Uart0_getrxbuf
+                0x02008350                ir_rxstate
+                0x02007c64                comm_rcbytek
+                0x02007d10                Port_Set
+                0x02008070                comstate
+                0x02008130                Port_Get
+                0x02008018                comm_stbyte
+                0x02007f90                comwrite
+                0x020081d4                ir_read
+                0x02008104                Uart0_getrxstate
+                0x020080e8                Uart0_getbyte
+                0x020082e0                ir_rxbuf
+                0x02008244                ir_write
+                0x02007be8                comread
+                0x020080c4                Uart0_putbyte
+ .text          0x020083a0     0x38a4 /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(printer.o)
+                0x0200a634                Printer_FontSet
+                0x0200af34                Printer_Str
+                0x02009478                PrnTest
+                0x0200b108                Printer_Logo
+                0x0200a9a8                Printer_PaperFeed
+                0x02009b2c                Printer_AutoDetect
+                0x0200ac74                Printer_PaperBack
+                0x0200a900                disp_prn_detect
+                0x0200a014                open_prn_port
+                0x0200af38                Printer_ClrBuf
+                0x020085cc                PrnStr
+                0x0200afac                Printer_Buffer
+                0x0200afc4                Printer_Open
+                0x020083a0                AdcRead
+                0x0200a77c                init_prn
+                0x0200a278                Printer_Detect
+                0x0200b034                Printer_Close
+                0x0200a5c0                PrnClrBuf
+                0x0200a0e0                close_prn_port
+                0x0200a50c                PrnLF
+                0x0200a2dc                PrnPaperFeed
+                0x020086e4                PrnStart
+                0x0200a104                PrnDelayTimeSet
+                0x0200a248                Printer_SpaceSet
+                0x0200a1a0                DelayUs
+ .text          0x0200bc44        0xc /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(abs.o)
+                0x0200bc44                abs
+ .text          0x0200bc50        0xc /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(atoi.o)
+                0x0200bc50                atoi
+ .text          0x0200bc5c       0x78 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(memcmp.o)
+                0x0200bc5c                memcmp
+ .text          0x0200bcd4       0x94 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(memcpy.o)
+                0x0200bcd4                memcpy
+ .text          0x0200bd68       0x7c /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(memset.o)
+                0x0200bd68                memset
+ .text          0x0200bde4       0xc0 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(sprintf.o)
+                0x0200bde4                _sprintf_r
+                0x0200be40                sprintf
+ .text          0x0200bea4       0x9c /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(strcat.o)
+                0x0200bea4                strcat
+ .text          0x0200bf40       0x8c /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(strcpy.o)
+                0x0200bf40                strcpy
+ .text          0x0200bfcc       0x8c /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(strlen.o)
+                0x0200bfcc                strlen
+ .text          0x0200c058      0x1c8 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(strtol.o)
+                0x0200c1f0                strtol
+                0x0200c058                _strtol_r
+ .text          0x0200c220     0x1f70 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(vfprintf.o)
+                0x0200c220                _vfprintf_r
+                0x0200e128                vfprintf
+ .text          0x0200e190       0xa4 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(vsprintf.o)
+                0x0200e190                vsprintf
+                0x0200e1e8                _vsprintf_r
+ .text          0x0200e234       0xfc /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(wsetup.o)
+                0x0200e234                __swsetup
+ .text          0x0200e330     0x159c /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(dtoa.o)
+                0x0200e330                _dtoa_r
+ .text          0x0200f8cc       0xe8 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(fflush.o)
+                0x0200f8cc                fflush
+ .text          0x0200f9b4      0x2a0 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(findfp.o)
+                0x0200fab8                __sinit
+                0x0200fbcc                __sfmoreglue
+                0x0200fc3c                _cleanup
+                0x0200fc30                _cleanup_r
+                0x0200f9b4                __sfp
+ .text          0x0200fc54      0x354 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(freer.o)
+                0x0200fc54                _free_r
+                0x0200fe94                _malloc_trim_r
+ .text          0x0200ffa8      0x39c /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(fvwrite.o)
+                0x0200ffa8                __sfvwrite
+ .text          0x02010344       0x6c /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(fwalk.o)
+                0x02010344                _fwalk
+ .text          0x020103b0      0x110 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(locale.o)
+                0x020103b0                _setlocale_r
+                0x02010420                __locale_charset
+                0x02010430                _localeconv_r
+                0x0201043c                setlocale
+                0x020104b4                localeconv
+ .text          0x020104c0      0x140 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(makebuf.o)
+                0x020104c0                __smakebuf
+ .text          0x02010600      0x674 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(mallocr.o)
+                0x02010600                _malloc_r
+ .text          0x02010c74       0x60 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(mbtowc_r.o)
+                0x02010c74                _mbtowc_r
+ .text          0x02010cd4       0xd8 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(memchr.o)
+                0x02010cd4                memchr
+ .text          0x02010dac       0xd8 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(memmove.o)
+                0x02010dac                memmove
+ .text          0x02010e84        0x8 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(mlock.o)
+                0x02010e88                __malloc_unlock
+                0x02010e84                __malloc_lock
+ .text          0x02010e8c      0xc64 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(mprec.o)
+                0x02011a88                _mprec_log10
+                0x02010ffc                _hi0bits
+                0x02010e8c                _Balloc
+                0x0201177c                _d2b
+                0x020110ec                _multiply
+                0x02011a0c                _ratio
+                0x020118b8                _s2b
+                0x02011990                _i2b
+                0x02011058                _lo0bits
+                0x020119b8                __mcmp
+                0x020112ec                _pow5mult
+                0x02011658                _ulp
+                0x020116c8                _b2d
+                0x02010f20                _multadd
+                0x020114e8                __mdiff
+                0x020113f0                _lshift
+                0x02011898                _Bfree
+ .text          0x02011af0      0x490 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(reallocr.o)
+                0x02011af0                _realloc_r
+ .text          0x02011f80       0x2c /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(s_isinf.o)
+                0x02011f80                isinf
+ .text          0x02011fac       0x20 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(s_isnan.o)
+                0x02011fac                isnan
+ .text          0x02011fcc       0x40 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(sbrkr.o)
+                0x02011fcc                _sbrk_r
+ .text          0x0201200c      0x108 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(stdio.o)
+                0x020120b8                __sseek
+                0x0201200c                __sread
+                0x02012108                __sclose
+                0x02012058                __swrite
+ .text          0x02012114       0xc0 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(strcmp.o)
+                0x02012114                strcmp
+ .text          0x020121d4      0xa48 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(syscalls.o)
+                0x02012888                _getpid
+                0x020122bc                initialise_monitor_handles
+                0x02012a9c                isatty
+                0x020128ec                _fstat
+                0x020126e0                _open
+                0x02012890                _sbrk
+                0x02012a10                _raise
+                0x02012a60                _times
+                0x02012924                _stat
+                0x02012584                _lseek
+                0x02012a00                _link
+                0x020125cc                _swiwrite
+                0x02012acc                _rename
+                0x0201248c                _swilseek
+                0x02012734                _swiclose
+                0x020121d4                _swiopen
+                0x02012a08                _unlink
+                0x02012614                _write
+                0x02012860                _kill
+                0x02012a14                _gettimeofday
+                0x020123c4                _read
+                0x0201283c                _exit
+                0x02012aa4                _system
+                0x0201237c                _swiread
+                0x020127a0                _close
+ .text          0x02012c1c       0x4c /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(writer.o)
+                0x02012c1c                _write_r
+ .text          0x02012c68       0x90 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(callocr.o)
+                0x02012c68                _calloc_r
+ .text          0x02012cf8       0x40 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(closer.o)
+                0x02012cf8                _close_r
+ .text          0x02012d38       0x10 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(errno.o)
+                0x02012d38                __errno
+ .text          0x02012d48       0x48 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(fstatr.o)
+                0x02012d48                _fstat_r
+ .text          0x02012d90       0x4c /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(lseekr.o)
+                0x02012d90                _lseek_r
+ .text          0x02012ddc       0x4c /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(readr.o)
+                0x02012ddc                _read_r
+ .text          0x02012e28      0x1b8 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(reent.o)
+                0x02012f30                cleanup_glue
+                0x02012e28                _reclaim_reent
+                0x02012f68                _wrapup_reent
+ .text          0x02012fe0       0x98 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_udivsi3.o)
+                0x02012fe0                __udivsi3
+ .text          0x02013078       0xb0 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_divsi3.o)
+                0x02013078                __divsi3
+ .text          0x02013128       0xc0 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_umodsi3.o)
+                0x02013128                __umodsi3
+ .text          0x020131e8        0x4 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_dvmd_tls.o)
+                0x020131e8                __div0
+ .text          0x020131ec      0x4f0 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_udivdi3.o)
+                0x020131ec                __udivdi3
+ .text          0x020136dc      0x550 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_umoddi3.o)
+                0x020136dc                __umoddi3
+ .text          0x02013c2c      0x464 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_addsub_df.o)
+                0x02013f7c                __adddf3
+                0x02013fdc                __subdf3
+ .text          0x02014090      0x40c /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_mul_df.o)
+                0x02014090                __muldf3
+ .text          0x0201449c      0x2cc /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_div_df.o)
+                0x0201449c                __divdf3
+ .text          0x02014768       0x9c /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_eq_df.o)
+                0x02014768                __eqdf2
+ .text          0x02014804       0x9c /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_ne_df.o)
+                0x02014804                __nedf2
+ .text          0x020148a0       0x9c /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_gt_df.o)
+                0x020148a0                __gtdf2
+ .text          0x0201493c       0x9c /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_ge_df.o)
+                0x0201493c                __gedf2
+ .text          0x020149d8       0x9c /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_lt_df.o)
+                0x020149d8                __ltdf2
+ .text          0x02014a74       0xc0 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_si_to_df.o)
+                0x02014a74                __floatsidf
+ .text          0x02014b34       0xf0 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_df_to_si.o)
+                0x02014b34                __fixdfsi
+ .text          0x02014c24       0x5c /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_negate_df.o)
+                0x02014c24                __negdf2
+ .text          0x02014c80       0x50 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_lshrdi3.o)
+                0x02014c80                __lshrdi3
+ .text          0x02014cd0      0x294 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_pack_df.o)
+                0x02014cd0                __pack_d
+ .text          0x02014f64      0x14c /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_unpack_df.o)
+                0x02014f64                __unpack_d
+ .text          0x020150b0      0x1bc /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_fpcmp_parts_df.o)
+                0x020150b0                __fpcmp_parts_d
+ .text          0x0201526c       0x50 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_ashldi3.o)
+                0x0201526c                __ashldi3
+ .text          0x020152bc     0x3e8c /cygdrive/d/ADS/BIN/../arm-elf/lib/libgs.a(filecore.o)
+                0x02015654                fs_seek
+                0x0201664c                s_filesize
+                0x02016558                fs_open
+                0x02015a80                fs_init
+                0x02016678                fs_remove
+                0x020167f0                fs_feof
+                0x020169a0                File_inf_get
+                0x02016620                s_remove
+                0x0201678c                ex_open
+                0x0201695c                fs_read
+                0x02016a78                file_datetime
+                0x020165cc                fs_close
+                0x020154f4                s_read
+                0x020152bc                s_open
+                0x020165f0                fs_filesize
+                0x02016708                GetFileInfo
+                0x02016858                fs_write
+                0x020168c0                fs_rename
+                0x02015730                fs_create
+                0x02016700                fs_fexist
+                0x0201643c                s_ProcWriteFail
+                0x020166d8                fs_freesize
+ .text          0x02019148      0x1ac /cygdrive/d/ADS/BIN/../arm-elf/lib/libgs.a(filedef.o)
+                0x02019264                s_fStartPercent
+                0x020192bc                s_WriteFlash
+                0x02019290                s_WriteFlashFailed
+                0x02019158                s_fInitStart
+                0x02019148                s_CheckFlash
+                0x02019178                s_fEraseSector
+                0x02019268                s_EraseSector
+                0x020192f4                etext = .
+                0x020192f4                . = ALIGN (0x4)
+ *(.rodata)
+ .rodata        0x020192f4     0x502c /cygdrive/d/ADS/BIN/../arm-elf/lib/libgs.a(pospy.o)
+                0x0201c04c                PY_mb_tu
+                0x0201a9c4                PY_mb_ka
+                0x0201998c                PY_mb_chui
+                0x0201ba20                PY_mb_san
+                0x0201a388                PY_mb_hou
+                0x020196f4                PY_mb_cao
+                0x02019c40                PY_mb_die
+                0x0201c334                PY_mb_xia
+                0x0201cfd8                PY_mb_zuo
+                0x0201c00c                PY_mb_tong
+                0x0201ac80                PY_mb_leng
+                0x0201a184                PY_mb_gua
+                0x0201cb8c                PY_mb_zei
+                0x02019978                PY_mb_chuang
+                0x0201970c                PY_mb_ce
+                0x0201ba40                PY_mb_sao
+                0x0201ccb4                PY_mb_zhen
+                0x0201cbe4                PY_mb_zhai
+                0x0201b5f0                PY_mb_pu
+                0x0201ca5c                PY_mb_yuan
+                0x0201bd80                PY_mb_song
+                0x0201a33c                PY_mb_hei
+                0x02019a98                PY_mb_da
+                0x0201b024                PY_mb_mang
+                0x0201b3c8                PY_mb_nuo
+                0x0201a618                PY_mb_jia
+                0x0201b2d4                PY_mb_ng
+                0x02019dec                PY_mb_fa
+                0x0201cdcc                PY_mb_zhong
+                0x0201cf98                PY_mb_zu
+                0x0201c0f0                PY_mb_wai
+                0x0201b360                PY_mb_ning
+                0x0201c504                PY_mb_xiu
+                0x0201c07c                PY_mb_tui
+                0x0201a888                PY_mb_jiong
+                0x0201b6bc                PY_mb_qia
+                0x0201ce24                PY_mb_zhu
+                0x0201cf84                PY_mb_zou
+                0x0201bfd8                PY_mb_tie
+                0x020197e8                PY_mb_chao
+                0x0201affc                PY_mb_man
+                0x0201ad68                PY_mb_liang
+                0x0201a668                PY_mb_jian
+                0x02019b6c                PY_mb_de
+                0x0201ab34                PY_mb_kui
+                0x0201a78c                PY_mb_jie
+                0x0201b8e4                PY_mb_que
+                0x02019fe4                PY_mb_gan
+                0x0201abcc                PY_mb_lan
+                0x0201a7e8                PY_mb_jin
+                0x0201b24c                PY_mb_na
+                0x0201aac4                PY_mb_ku
+                0x0201bf60                PY_mb_ti
+                0x02019cd8                PY_mb_du
+                0x0201aea0                PY_mb_lou
+                0x0201af54                PY_mb_luan
+                0x0201c498                PY_mb_xin
+                0x0201a1e4                PY_mb_gui
+                0x0201be00                PY_mb_sui
+                0x0201cd28                PY_mb_zhi
+                0x0201cfbc                PY_mb_zui
+                0x0201cf6c                PY_mb_zong
+                0x0201caa4                PY_mb_yue
+                0x02019bf0                PY_mb_dian
+                0x0201a1a0                PY_mb_guai
+                0x020195b8                PY_mb_biao
+                0x020199b8                PY_mb_chuo
+                0x0201bfb4                PY_mb_tiao
+                0x02019328                PY_mb_a
+                0x02019ecc                PY_mb_feng
+                0x0201b59c                PY_mb_ping
+                0x0201afc4                PY_mb_ma
+                0x02019fc8                PY_mb_gai
+                0x02019914                PY_mb_chu
+                0x0201b324                PY_mb_niang
+                0x0201ab88                PY_mb_kuo
+                0x0201ac54                PY_mb_lei
+                0x0201a9f0                PY_mb_kan
+                0x0201b55c                PY_mb_piao
+                0x02019dc4                PY_mb_ei
+                0x02019efc                PY_mb_fou
+                0x0201b3b0                PY_mb_nv
+                0x0201cbac                PY_mb_zha
+                0x02019c8c                PY_mb_diu
+                0x0201b03c                PY_mb_mao
+                0x0201cbfc                PY_mb_zhan
+                0x0201cb24                PY_mb_zan
+                0x0201ba04                PY_mb_sa
+                0x0201c52c                PY_mb_xu
+                0x0201b628                PY_mb_qi
+                0x0201c86c                PY_mb_yin
+                0x0201b584                PY_mb_pin
+                0x0201b490                PY_mb_pei
+                0x0201a72c                PY_mb_jiao
+                0x0201c154                PY_mb_wei
+                0x0201a364                PY_mb_hong
+                0x0201ae44                PY_mb_liu
+                0x0201c134                PY_mb_wang
+                0x0201a25c                PY_mb_ha
+                0x0201cecc                PY_mb_zhui
+                0x0201b758                PY_mb_qiao
+                0x0201b418                PY_mb_pai
+                0x02019c94                PY_mb_dong
+                0x0201ac8c                PY_mb_li
+                0x02019d54                PY_mb_duo
+                0x0201b430                PY_mb_pan
+                0x0201c8b8                PY_mb_ying
+                0x0201ae78                PY_mb_long
+                0x0201a12c                PY_mb_gu
+                0x0201bd20                PY_mb_shuo
+                0x0201a344                PY_mb_hen
+                0x0201b0e8                PY_mb_mi
+                0x0201c0d8                PY_mb_wa
+                0x0201aec4                PY_mb_lu
+                0x02019c24                PY_mb_diao
+                0x0201b32c                PY_mb_niao
+                0x0201c224                PY_mb_wu
+                0x0201c200                PY_mb_wo
+                0x0201ad30                PY_mb_lian
+                0x0201ab94                PY_mb_la
+                0x02019dd0                PY_mb_er
+                0x0201b9f0                PY_mb_run
+                0x0201baec                PY_mb_shang
+                0x02019b44                PY_mb_dao
+                0x0201a93c                PY_mb_juan
+                0x0201cb6c                PY_mb_ze
+                0x0201ac1c                PY_mb_lao
+                0x0201c790                PY_mb_yi
+                0x0201a424                PY_mb_huai
+                0x0201bb64                PY_mb_shen
+                0x0201b2c8                PY_mb_nen
+                0x0201a034                PY_mb_gao
+                0x0201a540                PY_mb_ji
+                0x0201bb08                PY_mb_shao
+                0x02019448                PY_mb_bang
+                0x02019730                PY_mb_cha
+                0x0201bd38                PY_mb_si
+                0x02019a1c                PY_mb_cu
+                0x0201af6c                PY_mb_lun
+                0x0201cb00                PY_mb_za
+                0x0201c440                PY_mb_xie
+                0x0201ce94                PY_mb_zhuai
+                0x0201be28                PY_mb_sun
+                0x0201aa10                PY_mb_kang
+                0x02019400                PY_mb_bai
+                0x0201b91c                PY_mb_rang
+                0x0201be60                PY_mb_ta
+                0x02019764                PY_mb_chai
+                0x0201a280                PY_mb_han
+                0x0201bbc4                PY_mb_shi
+                0x0201c60c                PY_mb_ya
+                0x0201b4b0                PY_mb_pen
+                0x0201c0a0                PY_mb_tuo
+                0x0201ccfc                PY_mb_zheng
+                0x02019fb0                PY_mb_ga
+                0x0201b5e8                PY_mb_pou
+                0x0201a408                PY_mb_hua
+                0x0201971c                PY_mb_cen
+                0x0201cfb0                PY_mb_zuan
+                0x020194f0                PY_mb_beng
+                0x0201cfcc                PY_mb_zun
+                0x0201ceb4                PY_mb_zhuang
+                0x0201b2d8                PY_mb_ni
+                0x020197b0                PY_mb_chang
+                0x0201add4                PY_mb_lin
+                0x0201d000                t_t10py
+                0x0201b3dc                PY_mb_o
+                0x0201bc74                PY_mb_shu
+                0x0201afc0                PY_mb_m
+                0x0201aa28                PY_mb_kao
+                0x02019398                PY_mb_ao
+                0x0201cc88                PY_mb_zhe
+                0x02019848                PY_mb_cheng
+                0x0201c5ac                PY_mb_xue
+                0x0201cacc                PY_mb_yun
+                0x0201b1c4                PY_mb_mo
+                0x0201c5c8                PY_mb_xun
+                0x0201b974                PY_mb_ri
+                0x0201967c                PY_mb_bu
+                0x0201ae74                PY_mb_lo
+                0x0201cc2c                PY_mb_zhang
+                0x020194dc                PY_mb_ben
+                0x0201b9d4                PY_mb_ruan
+                0x0201c404                PY_mb_xiao
+                0x0201b3bc                PY_mb_nve
+                0x02019d30                PY_mb_dun
+                0x0201bcfc                PY_mb_shuang
+                0x0201b308                PY_mb_nian
+                0x0201bcf0                PY_mb_shuan
+                0x0201c3c4                PY_mb_xiang
+                0x0201be88                PY_mb_tai
+                0x0201b7e8                PY_mb_qing
+                0x0201b978                PY_mb_rong
+                0x0201a830                PY_mb_jing
+                0x0201b35c                PY_mb_nin
+                0x0201b2c0                PY_mb_nei
+                0x0201c4f0                PY_mb_xiong
+                0x02019e9c                PY_mb_fen
+                0x0201a9a0                PY_mb_jun
+                0x0201962c                PY_mb_bo
+                0x0201b96c                PY_mb_reng
+                0x0201b944                PY_mb_ren
+                0x0201aab0                PY_mb_kou
+                0x0201ab08                PY_mb_kuan
+                0x020199a0                PY_mb_chun
+                0x0201b17c                PY_mb_min
+                0x02019338                PY_mb_ai
+                0x02019368                PY_mb_an
+                0x0201b8fc                PY_mb_qui
+                0x0201a474                PY_mb_huang
+                0x0201b4b8                PY_mb_peng
+                0x0201cb90                PY_mb_zen
+                0x02019bec                PY_mb_dia
+                0x020195e8                PY_mb_bin
+                0x0201b834                PY_mb_qiu
+                0x0201a0b8                PY_mb_geng
+                0x0201981c                PY_mb_chen
+                0x0201ba6c                PY_mb_sha
+                0x0201ce8c                PY_mb_zhua
+                0x0201b9f8                PY_mb_ruo
+                0x0201b27c                PY_mb_nan
+                0x02019b28                PY_mb_dang
+                0x0201a100                PY_mb_gou
+                0x0201bba0                PY_mb_sheng
+                0x0201bb30                PY_mb_she
+                0x0201c70c                PY_mb_yao
+                0x0201bda4                PY_mb_sou
+                0x0201a350                PY_mb_heng
+                0x020194a0                PY_mb_bei
+                0x02019418                PY_mb_ban
+                0x0201b378                PY_mb_niu
+                0x02019a68                PY_mb_cun
+                0x0201b264                PY_mb_nai
+                0x02019e04                PY_mb_fan
+                0x0201ad8c                PY_mb_liao
+                0x02019a74                PY_mb_cuo
+                0x02019b9c                PY_mb_di
+                0x0201a0a8                PY_mb_gen
+                0x0201cee4                PY_mb_zhun
+                0x0201a018                PY_mb_gang
+                0x02019b78                PY_mb_dei
+                0x0201b6cc                PY_mb_qian
+                0x0201ad2c                PY_mb_lia
+                0x0201ba68                PY_mb_seng
+                0x0201bfe8                PY_mb_ting
+                0x0201bdf4                PY_mb_suan
+                0x02019e5c                PY_mb_fei
+                0x0201b72c                PY_mb_qiang
+                0x0201b1a0                PY_mb_ming
+                0x0201cb4c                PY_mb_zao
+                0x0201cf1c                PY_mb_zi
+                0x0201b7b8                PY_mb_qin
+                0x0201b540                PY_mb_pian
+                0x0201c1d0                PY_mb_wen
+                0x0201a3a8                PY_mb_hu
+                0x0201cb98                PY_mb_zeng
+                0x020196b0                PY_mb_cai
+                0x0201abfc                PY_mb_lang
+                0x0201c910                PY_mb_yong
+                0x0201aa3c                PY_mb_ke
+                0x0201c0f8                PY_mb_wan
+                0x0201a220                PY_mb_gun
+                0x0201a6f8                PY_mb_jiang
+                0x0201a264                PY_mb_hai
+                0x020195dc                PY_mb_bie
+                0x0201aae0                PY_mb_kua
+                0x0201b128                PY_mb_mian
+                0x02019468                PY_mb_bao
+                0x0201bf48                PY_mb_te
+                0x02019b7c                PY_mb_deng
+                0x020199c8                PY_mb_ci
+                0x0201bd08                PY_mb_shui
+                0x0201b1bc                PY_mb_miu
+                0x0201b33c                PY_mb_nie
+                0x02019f04                PY_mb_fu
+                0x0201cdf0                PY_mb_zhou
+                0x02019d80                PY_mb_e
+                0x0201960c                PY_mb_bing
+                0x02019d20                PY_mb_dui
+                0x0201b21c                PY_mb_mu
+                0x0201bcd8                PY_mb_shua
+                0x02019abc                PY_mb_dai
+                0x0201ba54                PY_mb_se
+                0x0201b900                PY_mb_qun
+                0x0201b38c                PY_mb_nong
+                0x0201b474                PY_mb_pao
+                0x0201b39c                PY_mb_nou
+                0x0201a230                PY_mb_guo
+                0x0201bdc4                PY_mb_su
+                0x0201a05c                PY_mb_ge
+                0x0201b578                PY_mb_pie
+                0x0201ab70                PY_mb_kun
+                0x0201b290                PY_mb_nang
+                0x0201c944                PY_mb_you
+                0x0201aaf0                PY_mb_kuai
+                0x0201b148                PY_mb_miao
+                0x0201ac44                PY_mb_le
+                0x0201c298                PY_mb_xi
+                0x0201bf20                PY_mb_tao
+                0x0201a434                PY_mb_huan
+                0x0201b29c                PY_mb_nao
+                0x02019aec                PY_mb_dan
+                0x0201b998                PY_mb_rou
+                0x0201a894                PY_mb_jiu
+                0x0201abb0                PY_mb_lai
+                0x02019dc8                PY_mb_en
+                0x02019884                PY_mb_chi
+                0x0201c64c                PY_mb_yan
+                0x02019778                PY_mb_chan
+                0x0201a2d0                PY_mb_hao
+                0x020199f4                PY_mb_cong
+                0x0201c574                PY_mb_xuan
+                0x0201bb60                PY_mb_shei
+                0x0201b90c                PY_mb_ran
+                0x0201b92c                PY_mb_rao
+                0x0201a0d4                PY_mb_gong
+                0x020196a8                PY_mb_ca
+                0x02019724                PY_mb_ceng
+                0x0201cb3c                PY_mb_zang
+                0x020196c8                PY_mb_can
+                0x0201b3e4                PY_mb_ou
+                0x0201c758                PY_mb_ye
+                0x0201c03c                PY_mb_tou
+                0x0201c908                PY_mb_yo
+                0x0201b208                PY_mb_mou
+                0x0201bf54                PY_mb_teng
+                0x02019580                PY_mb_bian
+                0x02019950                PY_mb_chuai
+                0x0201ae08                PY_mb_ling
+                0x0201aaa0                PY_mb_kong
+                0x02019a10                PY_mb_cou
+                0x0201c360                PY_mb_xian
+                0x0201bf94                PY_mb_tian
+                0x02019d0c                PY_mb_duan
+                0x0201af4c                PY_mb_lve
+                0x0201b074                PY_mb_me
+                0x02019cbc                PY_mb_dou
+                0x02019508                PY_mb_bi
+                0x0201b3c4                PY_mb_nuan
+                0x020198f0                PY_mb_chou
+                0x0201c4c0                PY_mb_xing
+                0x0201a4fc                PY_mb_hun
+                0x0201a4a8                PY_mb_hui
+                0x0201b0c0                PY_mb_meng
+                0x0201b5bc                PY_mb_po
+                0x0201a2fc                PY_mb_he
+                0x0201bc54                PY_mb_shou
+                0x0201b0b0                PY_mb_men
+                0x0201afe8                PY_mb_mai
+                0x0201ab10                PY_mb_kuang
+                0x0201be3c                PY_mb_suo
+                0x0201b9a8                PY_mb_ru
+                0x0201c6d8                PY_mb_yang
+                0x0201c070                PY_mb_tuan
+                0x0201b9dc                PY_mb_rui
+                0x0201b868                PY_mb_qu
+                0x0201a1ac                PY_mb_guan
+                0x0201ba64                PY_mb_sen
+                0x0201ba14                PY_mb_sai
+                0x0201b820                PY_mb_qiong
+                0x0201a1d4                PY_mb_guang
+                0x0201af80                PY_mb_luo
+                0x0201bee8                PY_mb_tang
+                0x0201af20                PY_mb_lv
+                0x020196e4                PY_mb_cang
+                0x0201995c                PY_mb_chuan
+                0x0201aa88                PY_mb_ken
+                0x0201a9d4                PY_mb_kai
+                0x0201b4e0                PY_mb_pi
+                0x02019390                PY_mb_ang
+                0x02019a34                PY_mb_cuan
+                0x0201c1f4                PY_mb_weng
+                0x0201b2b8                PY_mb_ne
+                0x02019e38                PY_mb_fang
+                0x0201cc60                PY_mb_zhao
+                0x0201a960                PY_mb_jue
+                0x0201bce0                PY_mb_shuai
+                0x0201b8b4                PY_mb_quan
+                0x0201ce9c                PY_mb_zhuan
+                0x0201cb10                PY_mb_zai
+                0x0201b2d0                PY_mb_neng
+                0x0201a0a4                PY_mb_gei
+                0x0201adb8                PY_mb_lie
+                0x0201b078                PY_mb_mei
+                0x020193c8                PY_mb_ba
+                0x0201b3a0                PY_mb_nu
+                0x02019ef8                PY_mb_fo
+                0x0201a8cc                PY_mb_ju
+                0x0201a514                PY_mb_huo
+                0x0201b798                PY_mb_qie
+                0x0201b93c                PY_mb_re
+                0x020198d4                PY_mb_chong
+                0x0201a2bc                PY_mb_hang
+                0x02019c64                PY_mb_ding
+                0x0201ba94                PY_mb_shai
+                0x0201c08c                PY_mb_tun
+                0x0201b458                PY_mb_pang
+                0x0201beac                PY_mb_tan
+                0x0201b16c                PY_mb_mie
+                0x0201aa94                PY_mb_keng
+                0x02019808                PY_mb_che
+                0x0201b400                PY_mb_pa
+                0x0201cef0                PY_mb_zhuo
+                0x02019a48                PY_mb_cui
+                0x0201c99c                PY_mb_yu
+                0x0201ba9c                PY_mb_shan
+                0x0201ba30                PY_mb_sang
+                0x0201bd14                PY_mb_shun
+ .rodata        0x0201e320     0x1498 /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(lcd.o)
+                0x0201e7b8                cAsc16Dot
+                0x0201e320                ChHAddr
+ .rodata        0x0201f7b8       0xbc /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(printer.o)
+                0x0201f7b8                MotorTime
+ .rodata        0x0201f874     0x1200 /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(asc24.o)
+                0x0201f874                AsciiArray
+ .rodata        0x02020a74       0x20 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(vfprintf.o)
+ .rodata        0x02020a94      0x101 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(ctype_.o)
+                0x02020a94                _ctype_
+ *fill*         0x02020b95        0x3 00
+ .rodata        0x02020b98       0x30 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(locale.o)
+ .rodata        0x02020bc8      0x124 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(mprec.o)
+                0x02020cc4                __mprec_tinytens
+                0x02020bd4                __mprec_tens
+                0x02020c9c                __mprec_bigtens
+ .rodata        0x02020cec       0x14 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_thenan_df.o)
+                0x02020cec                __thenan_df
+ .rodata        0x02020d00      0x100 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_clz.o)
+                0x02020d00                __clz_tab
+ .rodata        0x02020e00      0x104 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgs.a(filecore.o)
+                0x02020e00                AppInfo
+ *(.rodata.str1.4)
+ .rodata.str1.4
+                0x02020f04      0x17d main.o
+                                0x180 (size before relaxing)
+ *fill*         0x02021081        0x3 00
+ .rodata.str1.4
+                0x02021084        0xc /cygdrive/d/ADS/BIN/../arm-elf/lib/libgs.a(hspos.o)
+                                 0x14 (size before relaxing)
+ .rodata.str1.4
+                0x02021090        0x7 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgs.a(config.o)
+                                  0x8 (size before relaxing)
+ *fill*         0x02021097        0x1 00
+ .rodata.str1.4
+                0x02021098      0xdfa /cygdrive/d/ADS/BIN/../arm-elf/lib/libgs.a(pospy.o)
+                                0xe0c (size before relaxing)
+ *fill*         0x02021e92        0x2 00
+ .rodata.str1.4
+                0x02021e94       0x37 /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(target.o)
+                                 0x38 (size before relaxing)
+ *fill*         0x02021ecb        0x1 00
+ .rodata.str1.4
+                0x02021ecc       0x21 /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(tm.o)
+                                 0x24 (size before relaxing)
+ *fill*         0x02021eed        0x3 00
+ .rodata.str1.4
+                0x02021ef0       0xbd /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(printer.o)
+                                 0xc0 (size before relaxing)
+ *fill*         0x02021fad        0x3 00
+ .rodata.str1.4
+                0x02021fb0       0x57 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(vfprintf.o)
+                                 0x5c (size before relaxing)
+ *fill*         0x02022007        0x1 00
+ .rodata.str1.4
+                0x02022008        0x9 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(dtoa.o)
+                                 0x14 (size before relaxing)
+ *fill*         0x02022011        0x3 00
+ .rodata.str1.4
+                0x02022014        0x2 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(impure.o)
+                                  0x4 (size before relaxing)
+ *fill*         0x02022016        0x2 00
+ .rodata.str1.4
+                0x02022018        0xb /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(locale.o)
+                                 0x18 (size before relaxing)
+ *fill*         0x02022023        0x1 00
+ .rodata.str1.4
+                0x02022024        0x4 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(syscalls.o)
+ .rodata.str1.4
+                0x02022028       0x2d /cygdrive/d/ADS/BIN/../arm-elf/lib/libgs.a(filecore.o)
+                                 0x30 (size before relaxing)
+ *fill*         0x02022055        0x3 00
+ .rodata.str1.4
+                0x02022058       0x81 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgs.a(filedef.o)
+                                 0x84 (size before relaxing)
+ *(.glue_7t)
+ *fill*         0x020220d9        0x3 00
+ *(.glue_7)
+                0x020220dc                _etext = .
+
+.data           0x020220dc      0x7b0 load address 0x020220dc
+                0x020220dc                _data = .
+                0x020220dc                . = ALIGN (0x4)
+ *(.data)
+ .data          0x020220dc        0x1 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgs.a(hspos.o)
+ .data          0x020220dd        0x1 /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(com.o)
+ .data          0x020220de        0x1 /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(lcd.o)
+ *fill*         0x020220df        0x1 00
+ .data          0x020220e0        0x4 /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(printer.o)
+ .data          0x020220e4        0x4 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(ctype_.o)
+                0x020220e4                __ctype_ptr
+ .data          0x020220e8      0x380 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(impure.o)
+                0x02022464                _impure_ptr
+ .data          0x02022468       0x14 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(locale.o)
+                0x02022468                __mb_cur_max
+                0x02022470                __lc_ctype
+ .data          0x0202247c      0x410 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(mallocr.o)
+                0x02022888                __malloc_sbrk_base
+                0x0202247c                __malloc_av_
+                0x02022884                __malloc_trim_threshold
+                0x0202288c                _edata = .
+
+.bss            0x020228a0    0x14224
+                0x020228a0                _start_bss = .
+                0x020228a0                . = ALIGN (0x4)
+ *(.bss)
+ .bss           0x020228a0        0x2 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgs.a(pospy.o)
+ *fill*         0x020228a2        0x2 00
+ .bss           0x020228a4       0x20 /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(com.o)
+ .bss           0x020228c4       0x14 /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(lcd.o)
+ .bss           0x020228d8        0xc /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(key.o)
+ .bss           0x020228e4        0x1 /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(comex.o)
+ *fill*         0x020228e5        0x1 00
+ .bss           0x020228e6        0x2 /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(printer.o)
+ .bss           0x020228e8        0xc /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(locale.o)
+                0x020228e8                __nlocale_changed
+                0x020228ec                __mlocale_changed
+                0x020228f0                _PathLocale
+ .bss           0x020228f4       0x34 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(mallocr.o)
+                0x020228f4                __malloc_top_pad
+                0x020228f8                __malloc_max_sbrked_mem
+                0x02022900                __malloc_current_mallinfo
+                0x020228fc                __malloc_max_total_mem
+ .bss           0x02022928       0xb4 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(syscalls.o)
+ .bss           0x020229dc     0x57dc /cygdrive/d/ADS/BIN/../arm-elf/lib/libgs.a(filecore.o)
+ *(COMMON)
+ *fill*         0x020281b8        0x8 00
+ COMMON         0x020281c0      0x1e4 main.o
+                                  0x0 (size before relaxing)
+                0x020281c0                Saddr
+                0x020281e0                Iaddr
+                0x02028200                data
+                0x020283a0                datal
+ *fill*         0x020283a4       0x1c 00
+ COMMON         0x020283c0      0x268 /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(target.o)
+                                  0x0 (size before relaxing)
+                0x020283c0                sys_clk
+                0x020283e0                iTickRead
+                0x02028400                iBeepCnt
+                0x02028420                bios_flag
+                0x02028440                fg_tmuse
+                0x02028460                iTickCnt
+                0x02028480                MCLK
+                0x020284a0                l_tm_wait
+                0x020285a0                fg_tm_clk
+                0x020285c0                bios_cnt
+                0x02028600                bios_data
+ *fill*         0x02028628       0x18 00
+ COMMON         0x02028640     0x1900 /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(lcd.o)
+                                  0x0 (size before relaxing)
+                0x02028640                sLcdBuf
+                0x020292c0                slcdbufbak
+ COMMON         0x02029f40     0xcb69 /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(printer.o)
+                                  0x0 (size before relaxing)
+                0x02029f40                DrvTime
+                0x02029f48                FeedMotoStat
+                0x02029f60                Spx
+                0x02029f68                PrnCurHigh
+                0x02029f80                PrnPhase
+                0x02029f88                StepForward
+                0x02029f90                PrnStates
+                0x02029fa0                StrobeTime
+                0x02029fc0                Prny
+                0x02029fc8                HzSize
+                0x02029fd0                PrnFeed
+                0x0202a000                Prnx
+                0x0202a008                PrnBuf
+                0x02036aa0                Spy
+                0x02036aa8                AscSize
+ *fill*         0x02036aa9       0x17 00
+ COMMON         0x02036ac0        0x4 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(reent.o)
+                                  0x0 (size before relaxing)
+                0x02036ac0                errno
+                0x02036ac4                _end_bss = .
+                0x02036ac4                end = .
+                0x02036ac4                _end = .
+OUTPUT(hw.cof elf32-littlearm)
+
+.comment        0x00000000      0x58e
+ .comment       0x00000000       0x12 main.o
+ .comment       0x00000012       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgs.a(hspos.o)
+ .comment       0x00000024       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgs.a(config.o)
+ .comment       0x00000036       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgs.a(pospy.o)
+ .comment       0x00000048       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(com.o)
+ .comment       0x0000005a       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(target.o)
+ .comment       0x0000006c       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(lcd.o)
+ .comment       0x0000007e       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(key.o)
+ .comment       0x00000090       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(tm.o)
+ .comment       0x000000a2       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(pwr.o)
+ .comment       0x000000b4       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(comex.o)
+ .comment       0x000000c6       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(printer.o)
+ .comment       0x000000d8       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libhs.a(asc24.o)
+ .comment       0x000000ea       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(abs.o)
+ .comment       0x000000fc       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(atoi.o)
+ .comment       0x0000010e       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(memcmp.o)
+ .comment       0x00000120       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(memcpy.o)
+ .comment       0x00000132       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(memset.o)
+ .comment       0x00000144       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(sprintf.o)
+ .comment       0x00000156       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(strcat.o)
+ .comment       0x00000168       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(strcpy.o)
+ .comment       0x0000017a       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(strlen.o)
+ .comment       0x0000018c       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(strtol.o)
+ .comment       0x0000019e       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(vfprintf.o)
+ .comment       0x000001b0       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(vsprintf.o)
+ .comment       0x000001c2       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(wsetup.o)
+ .comment       0x000001d4       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(ctype_.o)
+ .comment       0x000001e6       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(dtoa.o)
+ .comment       0x000001f8       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(fflush.o)
+ .comment       0x0000020a       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(findfp.o)
+ .comment       0x0000021c       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(freer.o)
+ .comment       0x0000022e       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(fvwrite.o)
+ .comment       0x00000240       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(fwalk.o)
+ .comment       0x00000252       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(impure.o)
+ .comment       0x00000264       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(locale.o)
+ .comment       0x00000276       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(makebuf.o)
+ .comment       0x00000288       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(mallocr.o)
+ .comment       0x0000029a       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(mbtowc_r.o)
+ .comment       0x000002ac       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(memchr.o)
+ .comment       0x000002be       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(memmove.o)
+ .comment       0x000002d0       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(mlock.o)
+ .comment       0x000002e2       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(mprec.o)
+ .comment       0x000002f4       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(reallocr.o)
+ .comment       0x00000306       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(s_isinf.o)
+ .comment       0x00000318       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(s_isnan.o)
+ .comment       0x0000032a       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(sbrkr.o)
+ .comment       0x0000033c       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(stdio.o)
+ .comment       0x0000034e       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(strcmp.o)
+ .comment       0x00000360       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(syscalls.o)
+ .comment       0x00000372       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(writer.o)
+ .comment       0x00000384       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(callocr.o)
+ .comment       0x00000396       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(closer.o)
+ .comment       0x000003a8       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(errno.o)
+ .comment       0x000003ba       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(fstatr.o)
+ .comment       0x000003cc       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(lseekr.o)
+ .comment       0x000003de       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(readr.o)
+ .comment       0x000003f0       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libc.a(reent.o)
+ .comment       0x00000402       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_udivdi3.o)
+ .comment       0x00000414       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_umoddi3.o)
+ .comment       0x00000426       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_addsub_df.o)
+ .comment       0x00000438       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_mul_df.o)
+ .comment       0x0000044a       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_div_df.o)
+ .comment       0x0000045c       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_eq_df.o)
+ .comment       0x0000046e       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_ne_df.o)
+ .comment       0x00000480       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_gt_df.o)
+ .comment       0x00000492       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_ge_df.o)
+ .comment       0x000004a4       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_lt_df.o)
+ .comment       0x000004b6       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_si_to_df.o)
+ .comment       0x000004c8       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_df_to_si.o)
+ .comment       0x000004da       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_negate_df.o)
+ .comment       0x000004ec       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_thenan_df.o)
+ .comment       0x000004fe       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_lshrdi3.o)
+ .comment       0x00000510       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_clz.o)
+ .comment       0x00000522       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_pack_df.o)
+ .comment       0x00000534       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_unpack_df.o)
+ .comment       0x00000546       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_fpcmp_parts_df.o)
+ .comment       0x00000558       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_ashldi3.o)
+ .comment       0x0000056a       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgs.a(filecore.o)
+ .comment       0x0000057c       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgs.a(filedef.o)
+
+.debug_line     0x00000000     0x121e
+ .debug_line    0x00000000       0x65 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_udivsi3.o)
+ .debug_line    0x00000065       0x6b /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_divsi3.o)
+ .debug_line    0x000000d0       0x65 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_umodsi3.o)
+ .debug_line    0x00000135       0x5a /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_dvmd_tls.o)
+ .debug_line    0x0000018f      0x135 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_udivdi3.o)
+ .debug_line    0x000002c4      0x148 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_umoddi3.o)
+ .debug_line    0x0000040c      0x142 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_addsub_df.o)
+ .debug_line    0x0000054e      0x132 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_mul_df.o)
+ .debug_line    0x00000680       0xe6 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_div_df.o)
+ .debug_line    0x00000766       0xac /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_eq_df.o)
+ .debug_line    0x00000812       0xac /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_ne_df.o)
+ .debug_line    0x000008be       0xad /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_gt_df.o)
+ .debug_line    0x0000096b       0xad /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_ge_df.o)
+ .debug_line    0x00000a18       0xac /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_lt_df.o)
+ .debug_line    0x00000ac4       0xb0 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_si_to_df.o)
+ .debug_line    0x00000b74       0xb5 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_df_to_si.o)
+ .debug_line    0x00000c29       0xa0 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_negate_df.o)
+ .debug_line    0x00000cc9       0x82 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_thenan_df.o)
+ .debug_line    0x00000d4b       0xc3 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_lshrdi3.o)
+ .debug_line    0x00000e0e       0xa9 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_clz.o)
+ .debug_line    0x00000eb7       0xf5 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_pack_df.o)
+ .debug_line    0x00000fac       0xdf /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_unpack_df.o)
+ .debug_line    0x0000108b       0xd0 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_fpcmp_parts_df.o)
+ .debug_line    0x0000115b       0xc3 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_ashldi3.o)
+
+.debug_info     0x00000000     0x754b
+ .debug_info    0x00000000       0x6b /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_udivsi3.o)
+ .debug_info    0x0000006b       0x6b /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_divsi3.o)
+ .debug_info    0x000000d6       0x6b /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_umodsi3.o)
+ .debug_info    0x00000141       0x6b /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_dvmd_tls.o)
+ .debug_info    0x000001ac      0x8ee /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_udivdi3.o)
+ .debug_info    0x00000a9a      0x8fd /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_umoddi3.o)
+ .debug_info    0x00001397      0x72a /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_addsub_df.o)
+ .debug_info    0x00001ac1      0x756 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_mul_df.o)
+ .debug_info    0x00002217      0x67e /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_div_df.o)
+ .debug_info    0x00002895      0x55b /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_eq_df.o)
+ .debug_info    0x00002df0      0x55b /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_ne_df.o)
+ .debug_info    0x0000334b      0x55b /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_gt_df.o)
+ .debug_info    0x000038a6      0x55b /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_ge_df.o)
+ .debug_info    0x00003e01      0x55b /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_lt_df.o)
+ .debug_info    0x0000435c      0x4e6 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_si_to_df.o)
+ .debug_info    0x00004842      0x5a7 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_df_to_si.o)
+ .debug_info    0x00004de9      0x52b /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_negate_df.o)
+ .debug_info    0x00005314      0x4b2 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_thenan_df.o)
+ .debug_info    0x000057c6      0x457 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_lshrdi3.o)
+ .debug_info    0x00005c1d      0x426 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_clz.o)
+ .debug_info    0x00006043      0x5fc /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_pack_df.o)
+ .debug_info    0x0000663f      0x525 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_unpack_df.o)
+ .debug_info    0x00006b64      0x58a /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_fpcmp_parts_df.o)
+ .debug_info    0x000070ee      0x45d /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_ashldi3.o)
+
+.debug_abbrev   0x00000000     0x222b
+ .debug_abbrev  0x00000000       0x14 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_udivsi3.o)
+ .debug_abbrev  0x00000014       0x14 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_divsi3.o)
+ .debug_abbrev  0x00000028       0x14 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_umodsi3.o)
+ .debug_abbrev  0x0000003c       0x14 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_dvmd_tls.o)
+ .debug_abbrev  0x00000050      0x1cc /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_udivdi3.o)
+ .debug_abbrev  0x0000021c      0x1db /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_umoddi3.o)
+ .debug_abbrev  0x000003f7      0x21c /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_addsub_df.o)
+ .debug_abbrev  0x00000613      0x23d /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_mul_df.o)
+ .debug_abbrev  0x00000850      0x228 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_div_df.o)
+ .debug_abbrev  0x00000a78      0x1b5 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_eq_df.o)
+ .debug_abbrev  0x00000c2d      0x1b5 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_ne_df.o)
+ .debug_abbrev  0x00000de2      0x1b5 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_gt_df.o)
+ .debug_abbrev  0x00000f97      0x1b5 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_ge_df.o)
+ .debug_abbrev  0x0000114c      0x1b5 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_lt_df.o)
+ .debug_abbrev  0x00001301      0x17d /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_si_to_df.o)
+ .debug_abbrev  0x0000147e      0x1c2 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_df_to_si.o)
+ .debug_abbrev  0x00001640      0x1b3 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_negate_df.o)
+ .debug_abbrev  0x000017f3      0x146 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_thenan_df.o)
+ .debug_abbrev  0x00001939      0x14f /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_lshrdi3.o)
+ .debug_abbrev  0x00001a88      0x11a /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_clz.o)
+ .debug_abbrev  0x00001ba2      0x1fd /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_pack_df.o)
+ .debug_abbrev  0x00001d9f      0x197 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_unpack_df.o)
+ .debug_abbrev  0x00001f36      0x1a6 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_fpcmp_parts_df.o)
+ .debug_abbrev  0x000020dc      0x14f /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_ashldi3.o)
+
+.debug_aranges  0x00000000      0x2c0
+ .debug_aranges
+                0x00000000       0x20 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_udivsi3.o)
+ .debug_aranges
+                0x00000020       0x20 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_divsi3.o)
+ .debug_aranges
+                0x00000040       0x20 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_umodsi3.o)
+ .debug_aranges
+                0x00000060       0x20 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_dvmd_tls.o)
+ .debug_aranges
+                0x00000080       0x20 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_udivdi3.o)
+ .debug_aranges
+                0x000000a0       0x20 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_umoddi3.o)
+ .debug_aranges
+                0x000000c0       0x20 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_addsub_df.o)
+ .debug_aranges
+                0x000000e0       0x20 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_mul_df.o)
+ .debug_aranges
+                0x00000100       0x20 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_div_df.o)
+ .debug_aranges
+                0x00000120       0x20 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_eq_df.o)
+ .debug_aranges
+                0x00000140       0x20 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_ne_df.o)
+ .debug_aranges
+                0x00000160       0x20 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_gt_df.o)
+ .debug_aranges
+                0x00000180       0x20 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_ge_df.o)
+ .debug_aranges
+                0x000001a0       0x20 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_lt_df.o)
+ .debug_aranges
+                0x000001c0       0x20 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_si_to_df.o)
+ .debug_aranges
+                0x000001e0       0x20 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_df_to_si.o)
+ .debug_aranges
+                0x00000200       0x20 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_negate_df.o)
+ .debug_aranges
+                0x00000220       0x20 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_lshrdi3.o)
+ .debug_aranges
+                0x00000240       0x20 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_pack_df.o)
+ .debug_aranges
+                0x00000260       0x20 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_unpack_df.o)
+ .debug_aranges
+                0x00000280       0x20 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_fpcmp_parts_df.o)
+ .debug_aranges
+                0x000002a0       0x20 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_ashldi3.o)
+
+.debug_frame    0x00000000      0x5d0
+ .debug_frame   0x00000000       0x3c /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_udivdi3.o)
+ .debug_frame   0x0000003c       0x3c /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_umoddi3.o)
+ .debug_frame   0x00000078       0xcc /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_addsub_df.o)
+ .debug_frame   0x00000144       0x7c /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_mul_df.o)
+ .debug_frame   0x000001c0       0x7c /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_div_df.o)
+ .debug_frame   0x0000023c       0x48 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_eq_df.o)
+ .debug_frame   0x00000284       0x48 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_ne_df.o)
+ .debug_frame   0x000002cc       0x48 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_gt_df.o)
+ .debug_frame   0x00000314       0x48 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_ge_df.o)
+ .debug_frame   0x0000035c       0x48 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_lt_df.o)
+ .debug_frame   0x000003a4       0x30 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_si_to_df.o)
+ .debug_frame   0x000003d4       0x64 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_df_to_si.o)
+ .debug_frame   0x00000438       0x40 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_negate_df.o)
+ .debug_frame   0x00000478       0x2c /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_lshrdi3.o)
+ .debug_frame   0x000004a4       0x6c /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_pack_df.o)
+ .debug_frame   0x00000510       0x30 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_unpack_df.o)
+ .debug_frame   0x00000540       0x64 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_fpcmp_parts_df.o)
+ .debug_frame   0x000005a4       0x2c /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_ashldi3.o)
+
+.debug_pubnames
+                0x00000000      0x289
+ .debug_pubnames
+                0x00000000       0x20 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_udivdi3.o)
+ .debug_pubnames
+                0x00000020       0x20 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_umoddi3.o)
+ .debug_pubnames
+                0x00000040       0x2c /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_addsub_df.o)
+ .debug_pubnames
+                0x0000006c       0x1f /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_mul_df.o)
+ .debug_pubnames
+                0x0000008b       0x1f /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_div_df.o)
+ .debug_pubnames
+                0x000000aa       0x1e /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_eq_df.o)
+ .debug_pubnames
+                0x000000c8       0x1e /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_ne_df.o)
+ .debug_pubnames
+                0x000000e6       0x1e /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_gt_df.o)
+ .debug_pubnames
+                0x00000104       0x1e /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_ge_df.o)
+ .debug_pubnames
+                0x00000122       0x1e /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_lt_df.o)
+ .debug_pubnames
+                0x00000140       0x22 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_si_to_df.o)
+ .debug_pubnames
+                0x00000162       0x20 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_df_to_si.o)
+ .debug_pubnames
+                0x00000182       0x1f /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_negate_df.o)
+ .debug_pubnames
+                0x000001a1       0x22 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_thenan_df.o)
+ .debug_pubnames
+                0x000001c3       0x20 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_lshrdi3.o)
+ .debug_pubnames
+                0x000001e3       0x20 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_clz.o)
+ .debug_pubnames
+                0x00000203       0x1f /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_pack_df.o)
+ .debug_pubnames
+                0x00000222       0x21 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_unpack_df.o)
+ .debug_pubnames
+                0x00000243       0x26 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_fpcmp_parts_df.o)
+ .debug_pubnames
+                0x00000269       0x20 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_ashldi3.o)
+
+.debug_ranges   0x00000000      0x210
+ .debug_ranges  0x00000000       0xb8 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_udivdi3.o)
+ .debug_ranges  0x000000b8       0xc8 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_umoddi3.o)
+ .debug_ranges  0x00000180       0x18 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_addsub_df.o)
+ .debug_ranges  0x00000198       0x30 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_mul_df.o)
+ .debug_ranges  0x000001c8       0x18 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_lshrdi3.o)
+ .debug_ranges  0x000001e0       0x18 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_pack_df.o)
+ .debug_ranges  0x000001f8       0x18 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_ashldi3.o)
+
+.debug_str      0x00000000      0xe29
+ .debug_str     0x00000000      0x3d9 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_udivdi3.o)
+                                0x42e (size before relaxing)
+ .debug_str     0x000003d9        0xa /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_umoddi3.o)
+                                0x42e (size before relaxing)
+ .debug_str     0x000003e3      0x134 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_addsub_df.o)
+                                0x48f (size before relaxing)
+ .debug_str     0x00000517       0x40 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_mul_df.o)
+                                0x476 (size before relaxing)
+ .debug_str     0x00000557       0x35 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_div_df.o)
+                                0x466 (size before relaxing)
+ .debug_str     0x0000058c        0x8 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_eq_df.o)
+                                0x42c (size before relaxing)
+ .debug_str     0x00000594        0x8 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_ne_df.o)
+                                0x42c (size before relaxing)
+ .debug_str     0x0000059c        0x8 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_gt_df.o)
+                                0x42c (size before relaxing)
+ .debug_str     0x000005a4        0x8 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_ge_df.o)
+                                0x42c (size before relaxing)
+ .debug_str     0x000005ac        0x8 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_lt_df.o)
+                                0x42c (size before relaxing)
+ .debug_str     0x000005b4        0xc /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_si_to_df.o)
+                                0x424 (size before relaxing)
+ .debug_str     0x000005c0        0xa /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_df_to_si.o)
+                                0x435 (size before relaxing)
+ .debug_str     0x000005ca       0x13 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_negate_df.o)
+                                0x42b (size before relaxing)
+ .debug_str     0x000005dd      0x412 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_thenan_df.o)
+ .debug_str     0x000009ef       0x12 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_lshrdi3.o)
+                                0x3ed (size before relaxing)
+ .debug_str     0x00000a01      0x3e5 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_clz.o)
+ .debug_str     0x00000de6       0x16 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_pack_df.o)
+                                0x43b (size before relaxing)
+ .debug_str     0x00000dfc       0x13 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_unpack_df.o)
+                                0x425 (size before relaxing)
+ .debug_str     0x00000e0f       0x10 /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_fpcmp_parts_df.o)
+                                0x435 (size before relaxing)
+ .debug_str     0x00000e1f        0xa /cygdrive/d/ADS/BIN/../arm-elf/lib/libgcc.a(_ashldi3.o)
+                                0x3ed (size before relaxing)

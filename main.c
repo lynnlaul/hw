@@ -1,4 +1,4 @@
-﻿/*===============================================================================
+﻿/*/*===============================================================================
   红外抄表程序
 
 
@@ -14,6 +14,7 @@
 #define DELAY_TIME3 200
 
 int datal;
+int k;
 int Iaddr[6];//整形表地址，用于抄表
 int data[99];//存放数据。
 uchar Saddr[12];//字符，表地址，用于接收键盘输入的表地址，以及显示。
@@ -24,7 +25,7 @@ void ir_14_data_07(int *dataflag);
 void hwcb();
 void inputaddr();
 void char2int();
-uchar ir_read_data_07();
+int ir_read_data_07();
 void print_info();
 
  /*=================================================================================
@@ -35,7 +36,6 @@ void print_info();
 int main(void)
 {
 	 int r,rt;
-	 uchar k;
 
 	 screen(1); 			 /* 设定为汉字显示状态 */
 	 while(1){
@@ -53,68 +53,125 @@ int main(void)
 			 case 0x89:return;
 		}
 		while(1){
-			cls();moveto(15,14);	putstr("   ");
-			moveto(1, 3); 	   putstr("红外测试程序");
-			moveto(3, 1); 	putstr("====================");
-			//moveto(6, 2);	 putstr("[1] 设置接收延时");
-			//moveto(8, 2); 	putstr("[2] 校时");
-			moveto(10, 2);	 putstr("[3] 抄表");
-			moveto(16, 2);   putstr("[F2] 退出");
-			do{k=key(0);
-			}while(k!=0x33&&k!=0x89);//暂时去掉延时、校时，while(k!=0x31&&k!=0x32&&k!=0x33&&k!=0x89); // 判断输入的键值,若输入的不是'1','2','3','4'或'F2'则继续等待输入
-				switch(k){
-				//case '1':setrtime();break;
-				//case '2':if (cbtype == 1) crtime();else crtime1();break;
-				case '3': hwcb();break;
-				}
-			 if (k == 0x89) break;
-		}
-	}
-}
-void hwcb(){
-	int k=0;
-	while(1){
-		cls();moveto(15,14);	putstr("   ");
-		moveto(1, 3); 	   putstr("红外测试程序");
-		moveto(3, 1); 	putstr("====================");
-		moveto(6, 2);	 putstr("[1] 读取电表地址");
-		moveto(10, 2);	 putstr("[3] 手动输入电表地址");
-		moveto(16, 2);   putstr("[F2] 退出");
-		do{k=key(0);
-		}while(k!=0x33&&k!=0x89);//暂时去掉延时、校时，while(k!=0x31&&k!=0x32&&k!=0x33&&k!=0x89); // 判断输入的键值,若输入的不是'1','2','3','4'或'F2'则继续等待输入
-			switch(k){
-			//case '1':setrtime();break;
-			//case '2':if (cbtype == 1) crtime();else crtime1();break;
-			case '3': inputaddr();break;
+				cls();moveto(15,14);	putstr("   ");
+				moveto(1, 3); 	   putstr("红外测试程序");
+				moveto(3, 1); 	putstr("====================");
+				moveto(6, 2);	 putstr("[1] 自动读取电表地址");
+				moveto(10, 2);	 putstr("[3] 手动输入电表地址");
+				moveto(16, 2);   putstr("[F2] 退出");
+				do{k=key(0);
+				}while(k!=0x33&&k!=0x89);//暂时去掉延时、校时，while(k!=0x31&&k!=0x32&&k!=0x33&&k!=0x89); // 判断输入的键值,若输入的不是'1','2','3','4'或'F2'则继续等待输入
+					switch(k){
+					//case '1':setrtime();break;
+					//case '2':if (cbtype == 1) crtime();else crtime1();break;
+					case '3': inputaddr();break;
+					}
+				if (k == 0x89) break;
 			}
-		if (k == 0x89) break;
+//		while(1){
+//			cls();moveto(15,14);	putstr("   ");
+//			moveto(1, 3); 	   putstr("红外测试程序");
+//			moveto(3, 1); 	putstr("====================");
+//			//moveto(6, 2);	 putstr("[1] 设置接收延时");
+//			//moveto(8, 2); 	putstr("[2] 校时");
+//			moveto(10, 2);	 putstr("[3] 抄表");
+//			moveto(16, 2);   putstr("[F2] 退出");
+//			do{k=key(0);
+//			}while(k!=0x33&&k!=0x89);//暂时去掉延时、校时，while(k!=0x31&&k!=0x32&&k!=0x33&&k!=0x89); // 判断输入的键值,若输入的不是'1','2','3','4'或'F2'则继续等待输入
+//				switch(k){
+//				//case '1':setrtime();break;
+//				//case '2':if (cbtype == 1) crtime();else crtime1();break;
+//				case '3': hwcb();break;
+//				}
+//			 if (k == 0x89) break;
+//		}
 	}
 }
-/*======================================
- *
- * 函数： 抄表项选择
- */
-void choosecase(){
-	int k;
-	while(1){
-		cls();moveto(15,14);	putstr("   ");
-		moveto(3, 2);	 putstr("[1] 当前正有电能");
-		moveto(5, 2);	 putstr("[2] 读取上一次日冻结时间");
-		moveto(7, 2);	 putstr("[3] 读取上一次日冻结正有电能");
-		moveto(9, 2);	 putstr("[4] 手动输入数据项");
-		moveto(16, 2);   putstr("[F2] 退出");
-		do{k=key(0);
-				}while(k!=0x31&&k!=0x32&&k!=0x33&&k!=0x34&&k!=0x89); // 判断输入的键值,若输入的不是'1','2','3','4'或'F2'则继续等待输入
-				switch(k){
-				case '1': ;break;
-				case '2': ;break;
-				case '3': ;break;
-				case '4': inputaddr();break;
-				case 0x89: break;
-				}
+
+/* =================================================================================
+函数：用户输入电表地址，不足12位自动在高位补0，并存入全局变量 Saddr[6]中
+需补写字符数组char 2 int数组转换函数
+
+==================================================================================*/
+void inputaddr(){
+	uchar addr[12];;
+	int b=11;
+	int i, x;
+	cls();moveto(15,14);	putstr("   ");
+	moveto(1, 3); 	   putstr("请输入电表地址");
+	moveto(10,2);
+	keysn(Saddr,12);
+	for(i=0;i!=12;i++){
+		if (Saddr[i]==0x20||(Saddr[i]>0x2F&&Saddr[i]<0x3A)||Saddr[i]==0x41||Saddr[i]==0x61){
+			continue;//print_info(i);
+		}
+		else{
+			cls();
+			moveto(8,2); putstr("电表地址不合法！");
+			moveto(10,2); putstr("按任意键继续..");
+			do{x=key(0);}while(x==0);//等待任意键按下
+			return;
+		}
+	}//检查输入合法性，不合法跳出函数
+	for(i=5;i!=-1;i--){
+		Iaddr[i]=0x00;//print_info(i);
+	}//memset(Iaddr, 0x00,sizeof(Iaddr));
+
+	i=11;
+	//print_info(i);
+
+	while (Saddr[i]==0x20){
+	    i--;//print_info(i);
+	}
+	memset(addr,0,12);
+	for(x=i;x>-1;x--){
+	    addr[b]=Saddr[i];
+	    b--;
+		i--;
 	}
 
+	for (i = 5; i != -1; i--) {
+		char2int(Iaddr,addr,i);//print_info(Iaddr[i]);print_info(addr[2*i+1]);
+	}
+	while(1){
+			cls();moveto(15,14);	putstr("   ");
+			moveto(3, 2);	 putstr("[1] 当前正有电能");
+			moveto(5, 2);	 putstr("[2] 读取上一次日冻结时间");
+			moveto(7, 2);	 putstr("[3] 读取上一次日冻结正有电能");
+			moveto(9, 2);	 putstr("[4] 手动输入数据项");
+			moveto(16, 2);   putstr("[F2] 退出");
+			do{k=key(0);
+					}while(k!=0x31&&k!=0x32&&k!=0x33&&k!=0x34&&k!=0x89); // 判断输入的键值,若输入的不是'1','2','3','4'或'F2'则继续等待输入
+					switch(k){
+					case '1': ;break;
+					case '2': ;break;
+					case '3': ;break;
+					case '4': inputaddr();break;
+					case 0x89: break;
+					}
+		}
 }
+
+//void hwcb(){
+//	int k=0;
+//	while(1){
+//		cls();moveto(15,14);	putstr("   ");
+//		moveto(1, 3); 	   putstr("红外测试程序");
+//		moveto(3, 1); 	putstr("====================");
+//		moveto(6, 2);	 putstr("[1] 自动读取电表地址");
+//		moveto(10, 2);	 putstr("[3] 手动输入电表地址");
+//		moveto(16, 2);   putstr("[F2] 退出");
+//		do{k=key(0);
+//		}while(k!=0x33&&k!=0x89);//暂时去掉延时、校时，while(k!=0x31&&k!=0x32&&k!=0x33&&k!=0x89); // 判断输入的键值,若输入的不是'1','2','3','4'或'F2'则继续等待输入
+//			switch(k){
+//			//case '1':setrtime();break;
+//			//case '2':if (cbtype == 1) crtime();else crtime1();break;
+//			case '3': inputaddr();break;
+//			}
+//		if (k == 0x89) break;
+//	}
+//}
+
 
 /*==
  * uchar dataflag[4];
@@ -184,52 +241,7 @@ setfail:
 end:
 	 return;*/
 
-/* =================================================================================
-函数：用户输入电表地址，不足12位自动在高位补0，并存入全局变量 Saddr[6]中
-需补写字符数组char 2 int数组转换函数
 
-==================================================================================*/
-void inputaddr(){
-	uchar addr[12];;
-	int b=11;
-	int i, x;
-	cls();moveto(15,14);	putstr("   ");
-	moveto(1, 3); 	   putstr("请输入电表地址");
-	moveto(10,2);
-	keysn(Saddr,12);
-	for(i=0;i!=12;i++){
-		if (Saddr[i]==0x20||(Saddr[i]>0x2F&&Saddr[i]<0x3A)||Saddr[i]==0x41||Saddr[i]==0x61){
-			continue;//print_info(i);
-		}
-		else{
-			cls();
-			moveto(8,2); putstr("电表地址不合法！");
-			moveto(10,2); putstr("按任意键继续..");
-			do{x=key(0);}while(x==0);//等待任意键按下
-			return;
-		}
-	}//检查输入合法性，不合法跳出函数
-	for(i=5;i!=-1;i--){
-		Iaddr[i]=0x00;//print_info(i);
-	}//memset(Iaddr, 0x00,sizeof(Iaddr));
-
-	i=11;
-	//print_info(i);
-
-	while (Saddr[i]==0x20){
-	    i--;//print_info(i);
-	}
-	memset(addr,0,12);
-	for(x=i;x>-1;x--){
-	    addr[b]=Saddr[i];
-	    b--;
-		i--;
-	}
-
-	for (i = 5; i != -1; i--) {
-		char2int(Iaddr,addr,i);//print_info(Iaddr[i]);print_info(addr[2*i+1]);
-	}
-}
 
 /*===================================================================
 函数：转换字符数组某两字符为整型数组莫一字节。

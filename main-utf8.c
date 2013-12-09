@@ -146,23 +146,32 @@ void inputaddr(){
 
 
 void cb(){
-	while(1){
-				cls();moveto(15,14);	putstr("   ");
-				moveto(3, 2);	 putstr("[1] 当前正有电能");
-				moveto(5, 2);	 putstr("[2] 读取上一次日冻结时间");
-				moveto(7, 2);	 putstr("[3] 读取上一次日冻结正有电能");
-				moveto(9, 2);	 putstr("[4] 手动输入数据项");
-				moveto(16, 2);   putstr("[F2] 退出");
-				do{k=key(0);
-						}while(k!=0x31&&k!=0x32&&k!=0x33&&k!=0x34&&k!=0x89); // 判断输入的键值,若输入的不是'1','2','3','4'或'F2'则继续等待输入
-						switch(k){
-						case '1': zxyg();break;
-						case '2': rdjsj();break;
-						case '3': rdjdn();break;
-						case '4': sdsr();break;
-						case 0x89: break;
-						}
+	int i=1;
+	while (i) {
+		cls();
+		moveto(15, 14);
+		putstr("   ");
+		moveto(3, 2);
+		putstr("[1] 当前正有电能");
+		moveto(5, 2);
+		putstr("[2] 读取上一次日冻结时间");
+		moveto(7, 2);
+		putstr("[3] 读取上一次日冻结正有电能");
+		moveto(9, 2);
+		putstr("[4] 手动输入数据项");
+		moveto(16, 2);
+		putstr("[F2] 退出");
+		do {
+			k = key(0);
+		} while (k != 0x31 && k != 0x32 && k != 0x33 && k != 0x34 && k != 0x89); // 判断输入的键值,若输入的不是'1','2','3','4'或'F2'则继续等待输入
+			switch(k){
+			case '1': zxyg();break;
+			case '2': rdjsj();break;
+			case '3': rdjdn();break;
+			case '4': sdsr();break;
+			case 0x89: i=0;break;
 			}
+	}
 }
 
 
@@ -177,11 +186,11 @@ void zxyg(){
 	ir_11_data_07(flag);
 	i=ir_read_data_07();
 	switch(i){
-	case 1: putstr("抄读成功");while(1);break;
-	case 2: break;
-	case 3: break;
-	case 4: break;
-	case 5: break;
+	case 0: cls();moveto(3,2);putstr("抄读成功");moveto(6,2);putchhex(data[3]);putchhex(data[2]);putchhex(data[1]);putstr(".");putchhex(data[0]);putstr("kWh");do{
+		i=key(0);
+	}while(i==0);break;
+	case 4: cls();moveto(3,2);putstr("接收错误！") ;do{i=key(0);}while(1==0);break;
+	case 5: cls();moveto(3,2);putstr("接收超时！");do{i=key(0);}while(1==0);break;
 	}
 
 }
@@ -283,7 +292,6 @@ void print_info(int i ){
 	ir_write(cs);delay(DELAY_TIME3);
 	ir_write(0x16);delay(400);
 	i=cs;
-	print_info(cs);
 	}
 
 
@@ -344,7 +352,7 @@ int ir_read_data_07(){
 	 int xh=0,i=0,x=0,yanshi=0;
 	 uchar k;
 start:
-//	cls();putstr("\n正在接收...");
+	cls();putstr("\n正在接收...");
 	while (xh==0) {
 		if(ir_rxstate()!=0){
 			data[i]=ir_rxbuf();
@@ -373,7 +381,6 @@ start:
 		}
 		if (yanshi>3500) {
 			xh=1;
-			print_info(yanshi);
 		}
 	}
 	return 5;

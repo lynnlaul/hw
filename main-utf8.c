@@ -21,7 +21,7 @@ int datacount;
 uchar Saddr[12];//字符，表地址，用于接收键盘输入的表地址，以及显示。
 
 
-void ir_11_data_07(uchar *dataflag);
+void ir_11_data_07(int *dataflag);
 void ir_14_data_07(int *dataflag);
 void inputaddr();
 void char2int();
@@ -40,60 +40,43 @@ void irtest();
  参数:
  返回:
  =================================================================================*/
-int main(void)
-{
-	 int r,rt;
+int main(void){
+	int r,rt;
 
-	 screen(1); 			 /* 设定为汉字显示状态 */
-	 while(1){
-		 cls();moveto(15,14);  putstr("   ");
-		 moveto(1, 3);		  putstr("红外测试程序");
-		 moveto(3, 1);	   putstr("====================");
-		 moveto(6, 2);	   putstr("电表规约: ");
-		 moveto(8, 2);	   putstr("[1] irtest");
-		 moveto(10, 2);   putstr("[2] DLT645-2007");
-		 moveto(16, 2);   putstr("[F2] 退出");
+	screen(1); /* 设定为汉字显示状态 */
+start:
+	while(1){
+		cls();moveto(15,14);  putstr("   ");
+		moveto(1, 3);		  putstr("红外测试程序");
+		moveto(3, 1);	   putstr("====================");
+		moveto(6, 2);	   putstr("电表规约: ");
+		moveto(8, 2);	   putstr("[1] irtest");
+		moveto(10, 2);   putstr("[2] DLT645-2007");
+		moveto(16, 2);   putstr("[F2] 退出");
 		do { k=key(0);}while(k!=0x31&&k!=0x32&&k!=0x89);//暂时去掉97规约/while(k!=0x31&&k!=0x32&&k!=0x89); // 判断输入的键值,若输入的不是'1','2','3','4'或'F2'则继续等待输入
 		switch(k){
-			 case '1':irtest();break;
+			 case '1':irtest();goto start;
 			 case '2':break;
 			 case 0x89:return;
 		}
+
 		while(1){
-				cls();moveto(15,14);	putstr("   ");
-				moveto(1, 3); 	   putstr("红外测试程序");
-				moveto(3, 1); 	putstr("====================");
-				moveto(6, 1);	 putstr("[1] 自动读取电表地址");
-				moveto(8, 1);	 putstr("[3] 手动输入电表地址");
-				moveto(12, 1);   putstr("[F2] 退出");
-				do{k=key(0);
-				}while(k!=0x31&&k!=0x33&&k!=0x89); // 判断输入的键值,若输入的不是'1','2','3','4'或'F2'则继续等待输入
-					switch(k){
-					//case '1':setrtime();break;
-					//case '2':if (cbtype == 1) crtime();else crtime1();break;
-					case '3': inputaddr();break;
-					}
-				if (k == 0x89) break;
+			cls();moveto(15,14);	putstr("   ");
+			moveto(1, 4); 	   putstr("红外测试程序");
+			moveto(3, 1); 	putstr("====================");
+			moveto(6, 1);	 putstr("[1] 自动读取电表地址");
+			moveto(8, 1);	 putstr("[2] 手动输入电表地址");
+			moveto(12, 1);   putstr("[F2] 退出");
+			do{k=key(0);}while(k!=0x31&&k!=0x32&&k!=0x89); // 判断输入的键值,若输入的不是'1','2','3','4'或'F2'则继续等待输入
+			switch(k){
+				//case '1':setrtime();break;
+				case '2': inputaddr();break;
 			}
-//		while(1){
-//			cls();moveto(15,14);	putstr("   ");
-//			moveto(1, 3); 	   putstr("红外测试程序");
-//			moveto(3, 1); 	putstr("====================");
-//			//moveto(6, 2);	 putstr("[1] 设置接收延时");
-//			//moveto(8, 2); 	putstr("[2] 校时");
-//			moveto(10, 2);	 putstr("[3] 抄表");
-//			moveto(16, 2);   putstr("[F2] 退出");
-//			do{k=key(0);
-//			}while(k!=0x33&&k!=0x89);//暂时去掉延时、校时，while(k!=0x31&&k!=0x32&&k!=0x33&&k!=0x89); // 判断输入的键值,若输入的不是'1','2','3','4'或'F2'则继续等待输入
-//				switch(k){
-//				//case '1':setrtime();break;
-//				//case '2':if (cbtype == 1) crtime();else crtime1();break;
-//				case '3': hwcb();break;
-//				}
-//			 if (k == 0x89) break;
-//		}
+			if (k == 0x89) break;
+		}
 	}
 }
+
 
 /* =================================================================================
 函数：用户输入电表地址，不足12位自动在高位补0，并存入全局变量 Saddr[6]中
@@ -104,7 +87,7 @@ void inputaddr(){
 	uchar addr[12];;
 	int b=11;
 	int i, x;
-	cls();moveto(15,14);	putstr("   ");
+	cls();
 	moveto(1, 3); 	   putstr("请输入电表地址");
 	moveto(10,2);
 	keysn(Saddr,12);
@@ -151,8 +134,6 @@ void cb(){
 	int i=1;
 	while (i) {
 		cls();
-		moveto(15, 14);
-		putstr("   ");
 		moveto(5, 1);
 		putstr("[1] 当前正有电能");
 		moveto(7, 1);
@@ -179,7 +160,7 @@ void cb(){
 
 
 void zxyg(){
-	uchar flag[4];
+	int flag[4];
 	int i;
 	flag[0]=0x00;
 	flag[1]=0x01;
@@ -198,7 +179,7 @@ void zxyg(){
 
 }
 void rdjsj(){
-	uchar flag[4];
+	int flag[4];
 	int i;
 	flag[0]=0x05;
 	flag[1]=0x06;
@@ -207,19 +188,64 @@ void rdjsj(){
 	ir_11_data_07(flag);
 	i=ir_read_data_07();
 	switch(i){
-	case 0: cls();moveto(3,2);putstr("抄读成功");moveto(6,2);putchhex(data[3]-0x33);putchhex(data[2]-0x33);putchhex(data[1]-0x33);putstr(".");putchhex(data[0]-0x33);putstr("kWh");do{
-		i=key(0);
-	}while(i==0);break;
+	case 0: cls();moveto(3,2);putstr("抄读成功");moveto(6,2);putchhex(datal);putchhex(data[4]);putchhex(data[4]-0x33);putstr("年");putchhex(data[3]-0x33);putstr("月");putchhex(data[2]-0x33);putstr("日");putchhex(data[1]-0x33);putstr("时");putchhex(data[0]-0x33);putstr("分");do{i=key(0);}while(i==0);break;
 	case 4: cls();moveto(3,2);putstr("接收错误！") ;moveto(5,1);for(i=0;i!=35;i++){putchhex(data[i]);}do{i=key(0);}while(1==0);break;
 	case 5: cls();moveto(3,2);putstr("接收超时！");do{i=key(0);}while(1==0);break;
 	default: cls();putchhex(i);moveto(5,1);for(i=0;i!=datacount;i++){putchhex(data[datacount]);}do{i=key(0);}while(1==0);break;
 	}
 }
 void rdjdn(){
-
+	int flag[4];
+		int i;
+		flag[0]=0x05;
+		flag[1]=0x06;
+		flag[2]=0x01;
+		flag[3]=0x01;
+		ir_11_data_07(flag);
+		i=ir_read_data_07();
+		switch(i){
+		case 0: cls();moveto(3,2);putstr("抄读成功");moveto(6,2);putchhex(data[3]-0x33);putchhex(data[2]-0x33);putchhex(data[1]-0x33);putstr(".");putchhex(data[0]-0x33);putstr("kWh");do{i=key(0);}while(i==0);break;
+		case 4: cls();moveto(3,2);putstr("接收错误！") ;moveto(5,1);for(i=0;i!=35;i++){putchhex(data[i]);}do{i=key(0);}while(1==0);break;
+		case 5: cls();moveto(3,2);putstr("接收超时！");do{i=key(0);}while(1==0);break;
+		default: cls();putchhex(i);moveto(5,1);for(i=0;i!=datacount;i++){putchhex(data[datacount]);}do{i=key(0);}while(1==0);break;
+		}
 }
 void sdsr(){
-
+	int flag[4];
+	uchar sflag[8];
+	int i;
+	cls();
+	moveto(6, 4);putstr("请输入数据项");
+	moveto(10,2);
+	keysn(sflag,8);
+	for(i=0;i!=8;i++){
+		if ((sflag[i]>0x2F&&sflag[i]<0x3A)||(sflag[i]>0x3D&&sflag[i]<0x47)||(sflag[i]>0x60&&sflag[i]<0x67)){
+			continue;//print_info(i);
+		}
+		else{
+			cls();
+			moveto(8,2); putstr("数据项不合法！");
+			moveto(10,2); putstr("按任意键继续..");
+			do{k=key(0);}while(k==0);//等待任意键按下
+			return;
+		}
+	}//检查输入合法性，不合法跳出函数
+	//这玩意怎么用？改flag为uchar都不对。。memset(flag,0,sizeof(flag));
+	for(i=0;i!=4;i++){
+		flag[i]=0;
+	}
+	for (i = 0; i != 4; i++) {
+		char2int(flag,sflag,i);print_info(flag[i]);print_info(sflag[2*i+1]);print_info(sflag[2*i]);
+		}
+	ir_11_data_07(flag);
+	i=ir_read_data_07();
+	switch(i){
+	case 0: cls();moveto(2,2);putstr("抄读成功！");moveto(4,2);for(i=0;i!=datal;i++){putchhex(data[i]-0x33);}do{i=key(0);}while(i==0);break;
+	//case 2: cls();moveto(2,2);putstr("无此数据项！");do{i=key(0);}while(i==0);break;
+	case 4: cls();moveto(3,2);putstr("接收错误！") ;moveto(5,1);for(i=0;i!=35;i++){putchhex(data[i]);}do{i=key(0);}while(1==0);break;
+	case 5: cls();moveto(3,2);putstr("接收超时！");do{i=key(0);}while(1==0);break;
+	default: cls();putstr("错误代码：");putchhex(i);moveto(3,1);for(i=0;i!=datacount;i++){putchhex(data[datacount]);}do{i=key(0);}while(1==0);break;
+	}
 }
 
 
@@ -230,6 +256,7 @@ void sdsr(){
 
 ====================================================================*/
 void char2int(int *add1,uchar *add2,int a){
+	if (add2[a*2+1]=='0') {add1[a]=add1[a]+0x00;}
 	if (add2[a*2+1]=='1') {add1[a]=add1[a]+0x01;}
 	if (add2[a*2+1]=='2') {add1[a]=add1[a]+0x02;}
 	if (add2[a*2+1]=='3') {add1[a]=add1[a]+0x03;}
@@ -246,6 +273,7 @@ void char2int(int *add1,uchar *add2,int a){
 	if (add2[a*2+1]=='E'||add2[a*2+1]=='e') {add1[a]=add1[a]+0x0E;}
 	if (add2[a*2+1]=='F'||add2[a*2+1]=='f') {add1[a]=add1[a]+0x0F;}
 
+	if (add2[a*2]=='0') {add1[a]=add1[a]+0x00;}
 	if (add2[a*2]=='1') {add1[a]=add1[a]+0x10;}
 	if (add2[a*2]=='2') {add1[a]=add1[a]+0x20;}
 	if (add2[a*2]=='3') {add1[a]=add1[a]+0x30;}
@@ -277,7 +305,7 @@ void print_info(int i ){
 /*=======================================================================
    函数 : 发送07规约读电能表报文，datafalg为数据标识。电表地址为全局变量Saddr[6]
  =======================================================================*/
- void ir_11_data_07(uchar *dataflag)
+ void ir_11_data_07(int *dataflag)
  {
 	long int cs;
 	int i;
@@ -370,11 +398,12 @@ void ir_14_data_07(int *dataflag)
  ==============================================================================*/
 int ir_read_data_07(){
 	int xh=0,i=0,x=0,yanshi=0;
+	int readdata[99];
 	cls();putstr("\n正在接收...");
 	datacount = 0;
 	while(xh==0){
 		if(ir_rxstate()!=0){   
-			data[datacount]=ir_rxbuf();
+			readdata[datacount]=ir_rxbuf();
 			datacount++;
 			yanshi=0;
 		}
@@ -387,20 +416,20 @@ int ir_read_data_07(){
 	if (datacount==0){
 		return 5;
 	}
-	while(data[i]==0xfe||data[i]==0x00){
+	while(readdata[i]==0xfe||readdata[i]==0x00){
 		i++;
 	}
-	if((data[i]==0x68)&&(data[i+7]==0x68)){
-		switch (data[i+8]){
+	if((readdata[i]==0x68)&&(readdata[i+7]==0x68)){
+		switch (readdata[i+8]){
 			 case 0x91: break;
 			 case 0x94: return 1;
 			 case 0xd1: return 2;
 			 case 0xd4: return 3;
 		 default: return 4;
 		}//检查控制字
-		datal = data[i+9]-4;//检查数据长度
-		for(x=0;x<datal;x++){
-			data[x]=data[i+13];
+		datal = readdata[i+9]-4;//检查数据长度
+		for(x=0;x!=datal;x++){
+			data[x]=readdata[i+14];
 		}
 		return  0;//返回数据
 	}else{

@@ -34,15 +34,13 @@ void rdjsj();
 void zxyg();
 void sdsr();
 void irtest();
-
+void irreadtest();
  /*=================================================================================
  函数:	 主程序
  参数:
  返回:
  =================================================================================*/
 int main(void){
-	int r,rt;
-
 	screen(1); /* 设定为汉字显示状态 */
 start:
 	while(1){
@@ -52,11 +50,13 @@ start:
 		moveto(6, 2);	   putstr("电表规约: ");
 		moveto(8, 2);	   putstr("[1] irtest");
 		moveto(10, 2);   putstr("[2] DLT645-2007");
+		moveto(12, 2);   putstr("[3] ir_rx");
 		moveto(16, 2);   putstr("[F2] 退出");
-		do { k=key(0);}while(k!=0x31&&k!=0x32&&k!=0x89);//暂时去掉97规约/while(k!=0x31&&k!=0x32&&k!=0x89); // 判断输入的键值,若输入的不是'1','2','3','4'或'F2'则继续等待输入
+		do { k=key(0);}while(k!=0x31&&k!=0x32&&k!=0x33&&k!=0x89);//暂时去掉97规约/while(k!=0x31&&k!=0x32&&k!=0x89); // 判断输入的键值,若输入的不是'1','2','3','4'或'F2'则继续等待输入
 		switch(k){
 			 case '1':irtest();goto start;
 			 case '2':break;
+			 case '3':irreadtest();goto start;
 			 case 0x89:return;
 		}
 
@@ -427,9 +427,9 @@ int ir_read_data_07(){
 			 case 0xd4: return 3;
 		 default: return 4;
 		}//检查控制字
-		datal = readdata[i+9]-4;//检查数据长度
+		datal = readdata[i+9]-4;print_info(readdata[i+9]);print_info(datal);//检查数据长度
 		for(x=0;x!=datal;x++){
-			data[x]=readdata[i+14];
+			data[x]=readdata[i+14+x];print_info(data[x]);
 		}
 		return  0;//返回数据
 	}else{
@@ -457,6 +457,30 @@ void irtest(){
 			 case 0x89:return;
 		}
 	}
+}
+
+void irreadtest(){
+	int readdata,yanshi;
+	cls();
+	putstr("按任意键开始接收...");
+	moveto(3,2);
+	do{k=key(0);}while(k==0);
+	cls();
+	ir_init(B1200,0x2B,UART_ON);
+
+	while(1){
+		if(ir_rxstate()!=0){
+			readdata=ir_rxbuf();
+			putchhex(readdata);
+			yanshi=0;
+		}
+		else{
+			yanshi++;
+			if(yanshi>timeout)break;//延长时间为10万
+			continue;
+		}
+	}
+	do{k=key(0);}while(k==0);
 }
 /*=================================================================================
 函数:	红外通讯

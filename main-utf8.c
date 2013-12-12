@@ -70,7 +70,7 @@ start:
 			moveto(12, 1);   putstr("[F2] 退出");
 			do{k=key(0);}while(k!=0x31&&k!=0x32&&k!=0x89); // 判断输入的键值,若输入的不是'1','2','3','4'或'F2'则继续等待输入
 			switch(k){
-				case '1': readaddr();cb();
+				case '1': readaddr();break;
 				case '2': inputaddr();break;
 			}
 			if (k == 0x89) break;
@@ -120,7 +120,7 @@ void readaddr(){
 		{k=key(0);}while(k==0)
 		return;
 	}
-	while(data[i]==0xfe||data[i]==0x00){
+	while(data[i]!=0x68){
 		i++;
 	}
 	if((data[i]==0x68)&&(data[i+7]==0x68)){
@@ -128,14 +128,19 @@ void readaddr(){
 			 case 0x93: break;
 		default: cls();putstr("接收错误！");do{k=key(0);}while(k==0); return;
 		}//检查控制字
-	cls();
-	putstr("电表地址：");
-	moveto(3,2);
-	for(x=5;x!=0;x--){
-		Iaddr[x]=data[i+1+x];//print_info(data[x]);
-		putchhex(Iaddr[x]);
-	}
-	do{k=key(0);}while(k==0);
+		cls();
+		putstr("电表地址：");
+		moveto(3,2);
+		for(x=5;x!=-1;x--){
+			Iaddr[x]=data[i+6-x];//print_info(data[x]);
+		}
+		for(x=0;x!=6;x++){
+			putchhex(Iaddr[x]);
+		}
+
+	do{k=key(0);}while(k==0);cb();
+	}else{
+		cls();putstr("接收错误！");do{k=key(0);}while(k==0); return;
 	}
 }
 
@@ -521,7 +526,7 @@ void irtest(){
 }
 
 void irreadtest(){
-	int irdata,yanshi;
+	int irdata[1],yanshi;
 	cls();
 	putstr("按任意键开始接收...");
 	moveto(3,2);
@@ -531,13 +536,13 @@ void irreadtest(){
 
 	while(1){
 		if(ir_rxstate()!=0){
-			irdata=ir_rxbuf();
-			putchhex(irdata);
+			irdata[0]=ir_rxbuf();
+			putchhex(irdata[0]);
 			yanshi=0;
 		}
 		else{
 			yanshi++;
-			if(yanshi>1000000)break;//延长时间为10万
+			if(yanshi>200000)break;//延长时间为10万
 			continue;
 		}
 	}

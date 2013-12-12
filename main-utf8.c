@@ -14,7 +14,7 @@
 #define DELAY_TIME3 200
 
 int datal;
-int k;//存放按键数据
+int k;//存放按键数据.为了防止按F2一退到顶级菜单问题，退出次级菜单前清空K
 int Iaddr[6];//整形表地址，用于抄表
 int data[99];//存放数据。
 int datacount;
@@ -99,25 +99,22 @@ void readaddr(){
 
 	int xh=0,i=0,x=0,yanshi=0;
 
-	cls();putstr("\n正在接收...");
+	cls();moveto(6,3);putstr("\n正在接收...");
 	datacount = 0;
-	while(xh==0){
+	while(yanshi<timeout){
 		if(ir_rxstate()!=0){
 			data[datacount]=ir_rxbuf();
 			datacount++;
 			yanshi=0;
-		}
-		else{
+		}else{
 			yanshi++;
-			if(yanshi>timeout)
-			xh=1;//延长时间为10万
 			continue;
 		}
 	}
 	if (datacount==0){
 		cls();
-		putstr("接收超时！");
-		{k=key(0);}while(k==0)
+		moveto(6,5);putstr("接收超时！");
+		do{k=key(0);}while(k==0);
 		return;
 	}
 	while(data[i]!=0x68){
@@ -126,10 +123,10 @@ void readaddr(){
 	if((data[i]==0x68)&&(data[i+7]==0x68)){
 		switch (data[i+8]){
 			 case 0x93: break;
-		default: cls();putstr("接收错误！");do{k=key(0);}while(k==0); return;
+		default: cls();moveto(6,5);putstr("接收错误！");do{k=key(0);}while(k==0); return;
 		}//检查控制字
 		cls();
-		putstr("电表地址：");
+		moveto(2,3);putstr("电表地址：");
 		moveto(3,2);
 		for(x=5;x!=-1;x--){
 			Iaddr[x]=data[i+6-x];//print_info(data[x]);
@@ -140,7 +137,7 @@ void readaddr(){
 
 	do{k=key(0);}while(k==0);cb();
 	}else{
-		cls();putstr("接收错误！");do{k=key(0);}while(k==0); return;
+		cls();moveto(6,5);putstr("接收错误！");do{k=key(0);}while(k==0); return;
 	}
 }
 
@@ -156,8 +153,8 @@ void inputaddr(){
 	int b=11;
 	int i, x;
 	cls();
-	moveto(1, 3); 	   putstr("请输入电表地址");
-	moveto(10,2);
+	moveto(3, 4); 	   putstr("请输入电表地址");
+	moveto(10,4);
 	keysn(Saddr,12);
 	for(i=0;i!=12;i++){
 		if (Saddr[i]==0x20||(Saddr[i]>0x2F&&Saddr[i]<0x3A)||Saddr[i]==0x41||Saddr[i]==0x61){
@@ -165,8 +162,8 @@ void inputaddr(){
 		}
 		else{
 			cls();
-			moveto(8,2); putstr("电表地址不合法！");
-			moveto(10,2); putstr("按任意键继续..");
+			moveto(8,4); putstr("电表地址不合法！");
+			moveto(10,4); putstr("按任意键继续..");
 			do{x=key(0);}while(x==0);//等待任意键按下
 			return;
 		}
@@ -192,7 +189,6 @@ void inputaddr(){
 		char2int(Iaddr,addr,i);//print_info(Iaddr[i]);print_info(addr[2*i+1]);
 	}
 	cb();
-
 }
 
 /*===========================================================================
@@ -222,7 +218,7 @@ void cb(){
 			case '4': sdsr();break;
 			case 0x89: i=0;break;
 			}
-	}
+	}k=0;//清空K，防止到上级菜单K为0X89继续退出。
 }
 
 
@@ -237,11 +233,11 @@ void zxyg(){
 	ir_11_data_07(flag);
 	i=ir_read_data_07();
 	switch(i){
-	case 0: cls();moveto(3,2);putstr("抄读成功");moveto(6,2);putchhex(data[3]-0x33);putchhex(data[2]-0x33);putchhex(data[1]-0x33);putstr(".");putchhex(data[0]-0x33);putstr("kWh");do{
+	case 0: cls();moveto(3,3);putstr("抄读成功");moveto(6,2);putchhex(data[3]-0x33);putchhex(data[2]-0x33);putchhex(data[1]-0x33);putstr(".");putchhex(data[0]-0x33);putstr("kWh");do{
 		i=key(0);
 	}while(i==0);break;
-	case 4: cls();moveto(3,2);putstr("接收错误！") ;moveto(5,1);for(i=0;i!=35;i++){putchhex(data[i]);}do{i=key(0);}while(1==0);break;
-	case 5: cls();moveto(3,2);putstr("接收超时！");do{i=key(0);}while(1==0);break;
+	case 4: cls();moveto(9,5);putstr("接收错误！") ;moveto(5,1);for(i=0;i!=35;i++){putchhex(data[i]);}do{i=key(0);}while(1==0);break;
+	case 5: cls();moveto(9,5);putstr("接收超时！");do{i=key(0);}while(1==0);break;
 	default: cls();putchhex(i);moveto(5,1);for(i=0;i!=datacount;i++){putchhex(data[datacount]);}do{i=key(0);}while(1==0);break;
 	}
 
@@ -256,12 +252,14 @@ void rdjsj(){
 	ir_11_data_07(flag);
 	i=ir_read_data_07();
 	switch(i){
-	case 0: cls();moveto(3,2);putstr("抄读成功");moveto(6,2);putchhex(data[4]-0x33);putstr("年");putchhex(data[3]-0x33);putstr("月");putchhex(data[2]-0x33);putstr("日");putchhex(data[1]-0x33);putstr("时");putchhex(data[0]-0x33);putstr("分");do{i=key(0);}while(i==0);break;
-	case 4: cls();moveto(3,2);putstr("接收错误！") ;moveto(5,1);for(i=0;i!=35;i++){putchhex(data[i]);}do{i=key(0);}while(1==0);break;
-	case 5: cls();moveto(3,2);putstr("接收超时！");do{i=key(0);}while(1==0);break;
+	case 0: cls();moveto(3,3);putstr("抄读成功");moveto(6,2);putchhex(data[4]-0x33);putstr("年");putchhex(data[3]-0x33);putstr("月");putchhex(data[2]-0x33);putstr("日");putchhex(data[1]-0x33);putstr("时");putchhex(data[0]-0x33);putstr("分");do{i=key(0);}while(i==0);break;
+	case 4: cls();moveto(9,5);putstr("接收错误！") ;moveto(5,1);for(i=0;i!=35;i++){putchhex(data[i]);}do{i=key(0);}while(1==0);break;
+	case 5: cls();moveto(9,5);putstr("接收超时！");do{i=key(0);}while(1==0);break;
 	default: cls();putchhex(i);moveto(5,1);for(i=0;i!=datacount;i++){putchhex(data[datacount]);}do{i=key(0);}while(1==0);break;
 	}
 }
+
+
 void rdjdn(){
 	int flag[4];
 		int i;
@@ -272,9 +270,9 @@ void rdjdn(){
 		ir_11_data_07(flag);
 		i=ir_read_data_07();
 		switch(i){
-		case 0: cls();moveto(3,2);putstr("抄读成功");moveto(6,2);putchhex(data[3]-0x33);putchhex(data[2]-0x33);putchhex(data[1]-0x33);putstr(".");putchhex(data[0]-0x33);putstr("kWh");do{i=key(0);}while(i==0);break;
-		case 4: cls();moveto(3,2);putstr("接收错误！") ;moveto(5,1);for(i=0;i!=35;i++){putchhex(data[i]);}do{i=key(0);}while(1==0);break;
-		case 5: cls();moveto(3,2);putstr("接收超时！");do{i=key(0);}while(1==0);break;
+		case 0: cls();moveto(3,3);putstr("抄读成功");moveto(6,2);putchhex(data[3]-0x33);putchhex(data[2]-0x33);putchhex(data[1]-0x33);putstr(".");putchhex(data[0]-0x33);putstr("kWh");do{i=key(0);}while(i==0);break;
+		case 4: cls();moveto(9,5);putstr("接收错误！") ;moveto(5,1);for(i=0;i!=35;i++){putchhex(data[i]);}do{i=key(0);}while(1==0);break;
+		case 5: cls();moveto(9,5);putstr("接收超时！");do{i=key(0);}while(1==0);break;
 		default: cls();putchhex(i);moveto(5,1);for(i=0;i!=datacount;i++){putchhex(data[datacount]);}do{i=key(0);}while(1==0);break;
 		}
 }
@@ -284,7 +282,7 @@ void sdsr(){
 	int i;
 	cls();
 	moveto(6, 4);putstr("请输入数据项");
-	moveto(10,2);
+	moveto(10,6);
 	keysn(sflag,8);
 	for(i=0;i!=8;i++){
 		if ((sflag[i]>0x2F&&sflag[i]<0x3A)||(sflag[i]>0x3D&&sflag[i]<0x47)||(sflag[i]>0x60&&sflag[i]<0x67)){
@@ -308,10 +306,10 @@ void sdsr(){
 	ir_11_data_07(flag);
 	i=ir_read_data_07();
 	switch(i){
-	case 0: cls();moveto(2,2);putstr("抄读成功！");moveto(4,2);for(i=0;i!=datal;i++){putchhex(data[i]-0x33);}do{i=key(0);}while(i==0);break;
+	case 0: cls();moveto(3,3);putstr("抄读成功！");moveto(4,2);for(i=0;i!=datal;i++){putchhex(data[i]-0x33);}do{i=key(0);}while(i==0);break;
 	//case 2: cls();moveto(2,2);putstr("无此数据项！");do{i=key(0);}while(i==0);break;
-	case 4: cls();moveto(3,2);putstr("接收错误！") ;moveto(5,1);for(i=0;i!=35;i++){putchhex(data[i]);}do{i=key(0);}while(1==0);break;
-	case 5: cls();moveto(3,2);putstr("接收超时！");do{i=key(0);}while(1==0);break;
+	case 4: cls();moveto(9,5);putstr("接收错误！") ;moveto(5,1);for(i=0;i!=35;i++){putchhex(data[i]);}do{i=key(0);}while(1==0);break;
+	case 5: cls();moveto(9,5);putstr("接收超时！");do{i=key(0);}while(1==0);break;
 	default: cls();putstr("错误代码：");putchhex(i);moveto(3,1);for(i=0;i!=datacount;i++){putchhex(data[datacount]);}do{i=key(0);}while(1==0);break;
 	}
 }
@@ -526,7 +524,7 @@ void irtest(){
 }
 
 void irreadtest(){
-	int irdata[1],yanshi;
+	int irdata,yanshi=0;
 	cls();
 	putstr("按任意键开始接收...");
 	moveto(3,2);
@@ -534,15 +532,14 @@ void irreadtest(){
 	cls();putstr("接收报文：");
 	ir_init(B1200,0x2B,UART_ON);
 
-	while(1){
+	while(yanshi<200000){
 		if(ir_rxstate()!=0){
-			irdata[0]=ir_rxbuf();
-			putchhex(irdata[0]);
+			irdata=ir_rxbuf();
+			putchhex(irdata);
 			yanshi=0;
 		}
 		else{
 			yanshi++;
-			if(yanshi>200000)break;//延长时间为10万
 			continue;
 		}
 	}

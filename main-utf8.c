@@ -8,7 +8,7 @@
 
 #define uchar unsigned char
 
-#define timeout 100000
+#define timeout 500000
 #define DELAY_TIME 8500
 #define DELAY_TIME2 1000
 #define DELAY_TIME3 200
@@ -19,15 +19,15 @@ int Iaddr[6];//整形表地址，用于抄表
 int data[99];//存放数据。
 int datacount;
 uchar user[4];
-uchar password[8];
+uchar password[4];
 uchar Saddr[12];//字符，表地址，用于接收键盘输入的表地址，以及显示。
 
+int ir_read_data_07();
 
 void ir_11_data_07(int *dataflag);
 void ir_14_data_07(int *dataflag);
 void inputaddr();
 void char2int();
-int ir_read_data_07();
 void print_info();
 void cb();
 void sb();
@@ -144,7 +144,7 @@ void readaddr(){
 			putchhex(Iaddr[x]);
 		}
 
-	do{k=key(0);}while(k==0);cb();
+	do{k=key(0);}while(k==0);selectprj();
 	}else{
 		cls();moveto(6,5);putstr("接收错误！");do{k=key(0);}while(k==0); return;
 	}
@@ -177,24 +177,21 @@ void inputaddr(){
 			return;
 		}
 	}//检查输入合法性，不合法跳出函数
-	for(i=5;i!=-1;i--){
-		Iaddr[i]=0x00;//print_info(i);
-	}//memset(Iaddr, 0x00,sizeof(Iaddr));
 
-	i=11;
-	//print_info(i);
 
-	while (Saddr[i]==0x20){
-	    i--;//print_info(i);
-	}
-	memset(addr,0,12);
-	for(x=i;x>-1;x--){
-	    addr[b]=Saddr[i];
-	    b--;
-		i--;
+
+	for(i=0;i<12;i++){
+	    if(Saddr[i]==0x20){
+	    	Saddr[i]=0x00;
+	    }
+		addr[11-i]=Saddr[i];
 	}
 
-	for (i = 5; i != -1; i--) {
+	for(i=0;i!=6;i++){
+		Iaddr[i]=0x00;
+	}
+
+	for (i = 0; i != 6; i++) {
 		char2int(Iaddr,addr,i);//print_info(Iaddr[i]);print_info(addr[2*i+1]);
 	}
 	selectprj();
@@ -237,10 +234,9 @@ void sb(){
 start1:
 	cls();
 	moveto(5,2);putstr("请输入操作者代码：");
-	moveto(7,3);keysn(user,4);
+	moveto(7,3);keysn(box,4);
 	for(i=0;i<4;i++){
-		if(user[i]>0x2F&&user[i]<0x3A){
-			box[3-i]=user[i];
+		if(box[i]>0x2F&&box[i]<0x3A){
 			continue;
 		}else{
 			cls();
@@ -251,30 +247,29 @@ start1:
 		}
 	}
 	for(i=0;i<4;i++){
-		if (box[i]=='0') {user[i]=0x00;}
-		if (box[i]=='1') {user[i]=0x01;}
-		if (box[i]=='2') {user[i]=0x02;}
-		if (box[i]=='3') {user[i]=0x03;}
-		if (box[i]=='4') {user[i]=0x04;}
-		if (box[i]=='5') {user[i]=0x05;}
-		if (box[i]=='6') {user[i]=0x06;}
-		if (box[i]=='7') {user[i]=0x07;}
-		if (box[i]=='8') {user[i]=0x08;}
-		if (box[i]=='9') {user[i]=0x09;}
-		if (box[i]=='A'||box[i]=='a') {user[i]=0x0A;}
-		if (box[i]=='B'||box[i]=='b') {user[i]=0x0B;}
-		if (box[i]=='C'||box[i]=='c') {user[i]=0x0C;}
-		if (box[i]=='D'||box[i]=='d') {user[i]=0x0D;}
-		if (box[i]=='E'||box[i]=='e') {user[i]=0x0E;}
-		if (box[i]=='F'||box[i]=='f') {user[i]=0x0F;}
+		if (box[i]=='0') {user[3-i]=0x00;}
+		if (box[i]=='1') {user[3-i]=0x01;}
+		if (box[i]=='2') {user[3-i]=0x02;}
+		if (box[i]=='3') {user[3-i]=0x03;}
+		if (box[i]=='4') {user[3-i]=0x04;}
+		if (box[i]=='5') {user[3-i]=0x05;}
+		if (box[i]=='6') {user[3-i]=0x06;}
+		if (box[i]=='7') {user[3-i]=0x07;}
+		if (box[i]=='8') {user[3-i]=0x08;}
+		if (box[i]=='9') {user[3-i]=0x09;}
+		if (box[i]=='A'||box[i]=='a') {user[3-i]=0x0A;}
+		if (box[i]=='B'||box[i]=='b') {user[3-i]=0x0B;}
+		if (box[i]=='C'||box[i]=='c') {user[3-i]=0x0C;}
+		if (box[i]=='D'||box[i]=='d') {user[3-i]=0x0D;}
+		if (box[i]=='E'||box[i]=='e') {user[3-i]=0x0E;}
+		if (box[i]=='F'||box[i]=='f') {user[3-i]=0x0F;}
 	}
 	start2:
 	cls();
 	moveto(5,2);putstr("请输入电表密码：");
-	moveto(7,3);keysn(password,8);
+	moveto(7,3);keysn(box,8);
 	for(i=0;i<8;i++){
-		if(password[i]>0x2F&&password[i]<0x3A){
-			box[7-i]=user[i];
+		if(box[i]>0x2F&&box[i]<0x3A){
 			continue;
 		}else{
 			cls();
@@ -283,9 +278,15 @@ start1:
 			do{k=key(0);}while(k==0);
 			goto start2;
 		}
+
 	}
-	for(i=0;i<8;i++){
-		char2int(password,user,i);
+
+	swap(box[0],box[6]);
+	swap(box[1],box[7]);
+	swap(box[2],box[4]);
+	swap(box[3],box[5]);
+	for(i=0;i<4;i++){
+		char2int(password,box,i);print_info(box[i]);
 	}
 
 	while(i!=0){
@@ -475,7 +476,7 @@ start1:	cls();
 		char2int(box,shijian,i);
 	}
 	for(i=0;i<3;i++){
-		data[i]=box[2-i];print_info(data[i]);
+		data[i]=box[2-i];
 	}
 
 	if(data[0]>0x60||data[1]>0x60||data[2]>0x23){
@@ -491,6 +492,9 @@ start1:	cls();
 
 
 start2:
+	cls();
+	moveto(3,4);
+	putstr("正在发送...");
 	gettime(data);
 	shijian[0]=data[6];
 	shijian[1]=data[7];
@@ -501,10 +505,10 @@ start2:
 
 	char2int(data,shijian,i);
 start3:
-	dataflag[0]=0x04;
-	dataflag[1]=0x00;
-	dataflag[2]=0x01;
-	dataflag[3]=0x02;
+	dataflag[0]=0x02;
+	dataflag[1]=0x01;
+	dataflag[2]=0x00;
+	dataflag[3]=0x04;
 	datal=3;
 
 	ir_14_data_07(dataflag);
@@ -654,8 +658,7 @@ void print_info(int i ){
 
 
  /*=======================================================================
-	未完善 函数  发送07规约写电能表报文，datafalg为数据标�
-��。电表地址为全局变量Saddr[6]
+	未完善 函数  发送07规约写电能表报文，datafalg为数据标。电表地址为全局变量Saddr[6]
     数据为全局变量data[99],数据长度为全局变量datal.使用前datal 因计算好并赋值
   =======================================================================*/
 void ir_14_data_07(int *dataflag)
@@ -684,8 +687,8 @@ void ir_14_data_07(int *dataflag)
 	 ir_write(Iaddr[4]);delay(DELAY_TIME3);
 	 ir_write(Iaddr[5]);delay(DELAY_TIME3);
 	 ir_write(0x68);delay(DELAY_TIME3);
-	 ir_write(14);delay(DELAY_TIME3);
-	 ir_write(datal+4);delay(DELAY_TIME3);
+	 ir_write(0x14);delay(DELAY_TIME3);
+	 ir_write(datal+12);delay(DELAY_TIME3);
 	 for (i=0; i<4; i++){
 		 if(dataflag[i]>204)
 		 {ir_write(dataflag[i]-205);delay(DELAY_TIME3);}
@@ -800,6 +803,12 @@ void irreadtest(){
 		}
 	}
 	do{k=key(0);}while(k==0);
+}
+void swap(char *data1,char *data2){
+	int i;
+	i=data1;
+	data1=data2;
+	data2=i;
 }
 /*=================================================================================
 函数:	红外通讯

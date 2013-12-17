@@ -13,21 +13,21 @@
 #define DELAY_TIME2 1000
 #define DELAY_TIME3 200
 
-int datal;
-int k;//存放按键数据.为了防止按F2一退到顶级菜单问题，退出次级菜单前清空K
-int Iaddr[6];//整形表地址，用于抄表
-int data[99];//存放数据。
+uchar datal;
+uchar k;//存放按键数据.为了防止按F2一退到顶级菜单问题，退出次级菜单前清空K
+uchar Iaddr[6];//整形表地址，用于抄表
+uchar data[99];//存放数据。
 int datacount;
 uchar user[4];
 uchar password[4];
-uchar Saddr[12];//字符，表地址，用于接收键盘输入的表地址，以及显示。
+
 
 int ir_read_data_07();
 
 void ir_11_data_07(int *dataflag);
 void ir_14_data_07(int *dataflag);
 void inputaddr();
-void char2int();
+void asc2digi();
 void print_info();
 void cb();
 void sb();
@@ -45,6 +45,8 @@ void setaddr();
 void sdsb();
 void changedate();
 void changetime();
+
+
  /*=================================================================================
  函数:	 主程序
  参数:
@@ -153,7 +155,7 @@ void readaddr(){
 
 
 /* =================================================================================
-函数：用户输入电表地址，不足12位自动在高位补0，并存入全局变量 Saddr[6]中
+函数：用户输入电表地址，不足12位自动在高位补0，并存入 addr[12]中
 需补写字符数组char 2 int数组转换函数
 
 ==================================================================================*/
@@ -164,35 +166,40 @@ void inputaddr(){
 	cls();
 	moveto(3, 4); 	   putstr("请输入电表地址");
 	moveto(10,4);
-	keysn(Saddr,12);
+	keysn(addr,12);
+
 	for(i=0;i!=12;i++){
-		if (Saddr[i]==0x20||(Saddr[i]>0x2F&&Saddr[i]<0x3A)||Saddr[i]==0x41||Saddr[i]==0x61){
+		if (addr[i]==0x20||(addr[i]>0x2F&&addr[i]<0x3A)||addr[i]==0x41||addr[i]==0x61){
 			continue;//print_info(i);
 		}
 		else{
 			cls();
 			moveto(8,4); putstr("电表地址不合法！");
 			moveto(10,4); putstr("按任意键继续..");
-			do{x=key(0);}while(x==0);//等待任意键按下
+			do{k=key(0);}while(k==0);//等待任意键按下
 			return;
 		}
 	}//检查输入合法性，不合法跳出函数
 
-
-
-	for(i=0;i<12;i++){
-	    if(Saddr[i]==0x20){
-	    	Saddr[i]=0x00;
-	    }
-		addr[11-i]=Saddr[i];
+	i=11;
+	while(addr[i]==0x20){
+		addr[i]=0x00;
+		i--;
 	}
+
+	i=addr[0];addr[0]=addr[10];addr[10]=i;
+	i=addr[1];addr[1]=addr[11];addr[11]=i;
+	i=addr[2];addr[2]=addr[8];addr[8]=i;
+	i=addr[3];addr[3]=addr[9];addr[9]=i;
+	i=addr[4];addr[4]=addr[6];addr[6]=i;
+	i=addr[5];addr[5]=addr[7];addr[7]=i;
 
 	for(i=0;i!=6;i++){
 		Iaddr[i]=0x00;
 	}
 
 	for (i = 0; i != 6; i++) {
-		char2int(Iaddr,addr,i);//print_info(Iaddr[i]);print_info(addr[2*i+1]);
+		asc2digi(Iaddr,addr,i);//print_info(Iaddr[i]);print_info(addr[2*i+1]);
 	}
 	selectprj();
 }
@@ -229,7 +236,7 @@ void selectprj(){
  *
  */
 void sb(){
-	int i;
+	uchar i;
 	uchar box[8];
 start1:
 	cls();
@@ -281,12 +288,14 @@ start1:
 
 	}
 
-	swap(box[0],box[6]);
-	swap(box[1],box[7]);
-	swap(box[2],box[4]);
-	swap(box[3],box[5]);
+	i=box[0];box[0]=box[6];box[6]=i;
+	i=box[1];box[1]=box[7];box[7]=i;
+	i=box[2];box[2]=box[4];box[4]=i;
+	i=box[3];box[3]=box[5];box[5]=i;
+
 	for(i=0;i<4;i++){
-		char2int(password,box,i);print_info(box[i]);
+		password[i]=0x00;
+		asc2digi(password,box,i);
 	}
 
 	while(i!=0){
@@ -419,7 +428,7 @@ void sdsr(){
 		flag[i]=0;
 	}
 	for (i = 0; i != 4; i++) {
-		char2int(flag,sflag,i);//print_info(flag[i]);print_info(sflag[2*i+1]);print_info(sflag[2*i]);
+		asc2digi(flag,sflag,i);//print_info(flag[i]);print_info(sflag[2*i+1]);print_info(sflag[2*i]);
 		}
 	for(i=0;i!=4;i++){
 		sflag[3-i]=flag[i];
@@ -437,10 +446,10 @@ void sdsr(){
 
 
 void changetime(){
-	int i;
-	int dataflag[4];
+	uchar i;
+	uchar dataflag[4];
 	uchar shijian[6];
-	int box[3];
+
 
 	cls();
 	moveto(3,1);putstr("[1] 手动输入时间");
@@ -471,12 +480,13 @@ start1:	cls();
 			continue;
 		}
 	}
+
+	i=shijian[0];shijian[0]=shijian[4];shijian[4]=i;
+	i=shijian[1];shijian[1]=shijian[5];shijian[5]=i;
+
 	for(i=0;i<3;i++){
-		box[i]=0;
-		char2int(box,shijian,i);
-	}
-	for(i=0;i<3;i++){
-		data[i]=box[2-i];
+		data[i]=0x00;
+		asc2digi(data,shijian,i);
 	}
 
 	if(data[0]>0x60||data[1]>0x60||data[2]>0x23){
@@ -503,7 +513,7 @@ start2:
 	shijian[4]=data[0];
 	shijian[5]=data[1];
 
-	char2int(data,shijian,i);
+	asc2digi(data,shijian,i);
 start3:
 	dataflag[0]=0x02;
 	dataflag[1]=0x01;
@@ -551,7 +561,7 @@ void changedate(){
 		}
 	}
 	for(i=0;i<4;i++){
-		char2int(date,box,i);
+		asc2digi(date,box,i);
 	}
 	if(date[0]>7||date[1]>31||date[2]>12){
 		cls();
@@ -572,7 +582,7 @@ void sdsb(){}
 入口：add1，整型数组；add2，字符数组
 
 ====================================================================*/
-void char2int(int *add1,uchar *add2,int a){
+void asc2digi(uchar *add1,uchar *add2,int a){
 	if (add2[a*2+1]=='0') {add1[a]=add1[a]+0x00;}
 	if (add2[a*2+1]=='1') {add1[a]=add1[a]+0x01;}
 	if (add2[a*2+1]=='2') {add1[a]=add1[a]+0x02;}
@@ -620,7 +630,7 @@ void print_info(int i ){
 }
 
 /*=======================================================================
-   函数 : 发送07规约读电能表报文，datafalg为数据标识。电表地址为全局变量Saddr[6]
+   函数 : 发送07规约读电能表报文，datafalg为数据标识。电表地址为全局变量Iaddr[6]
  =======================================================================*/
  void ir_11_data_07(int *dataflag)
  {
@@ -637,12 +647,12 @@ void print_info(int i ){
 	ir_write(0xFE);delay(DELAY_TIME3);
 	ir_write(0xFE);delay(DELAY_TIME3);
 	ir_write(0x68);delay(DELAY_TIME3);
-	ir_write(Iaddr[5]);delay(DELAY_TIME3);
-	ir_write(Iaddr[4]);delay(DELAY_TIME3);
-	ir_write(Iaddr[3]);delay(DELAY_TIME3);
-	ir_write(Iaddr[2]);delay(DELAY_TIME3);
-	ir_write(Iaddr[1]);delay(DELAY_TIME3);
 	ir_write(Iaddr[0]);delay(DELAY_TIME3);
+	ir_write(Iaddr[1]);delay(DELAY_TIME3);
+	ir_write(Iaddr[2]);delay(DELAY_TIME3);
+	ir_write(Iaddr[3]);delay(DELAY_TIME3);
+	ir_write(Iaddr[4]);delay(DELAY_TIME3);
+	ir_write(Iaddr[5]);delay(DELAY_TIME3);
 	ir_write(0x68);delay(DELAY_TIME3);
 	ir_write(0x11);delay(DELAY_TIME3);
 	ir_write(0x04);delay(DELAY_TIME3);
@@ -658,13 +668,13 @@ void print_info(int i ){
 
 
  /*=======================================================================
-	未完善 函数  发送07规约写电能表报文，datafalg为数据标。电表地址为全局变量Saddr[6]
+	未完善 函数  发送07规约写电能表报文，datafalg为数据标。电表地址为全局变量Iaddr[6]
     数据为全局变量data[99],数据长度为全局变量datal.使用前datal 因计算好并赋值
   =======================================================================*/
-void ir_14_data_07(int *dataflag)
+void ir_14_data_07(uchar *dataflag)
 {
 	long int cs=0;
-	int i;
+	uchar i;
 	ir_init(B1200,0x2B,UART_ON);//初始化红外口
 	//dleay1();
 	cs=0x68+Iaddr[0]+Iaddr[i]+Iaddr[2]+Iaddr[3]+Iaddr[4]+Iaddr[5]+0x68+0x14+datal+4+dataflag[0]+0X33+dataflag[1]+0x33+dataflag[2]+0x33+dataflag[3]+0x33;//提前计算校验和；
@@ -694,14 +704,14 @@ void ir_14_data_07(int *dataflag)
 		 {ir_write(dataflag[i]-205);delay(DELAY_TIME3);}
 		 else{ir_write(dataflag[i]+0x33);delay(DELAY_TIME3);}//计算数据表示+0X33是否大于FF,因测试数据标识为0XCC的情况
 	}
-	 ir_write(password[0]+33);delay(DELAY_TIME3);
-	 ir_write(password[1]+33);delay(DELAY_TIME3);
-	 ir_write(password[2]+33);delay(DELAY_TIME3);
-	 ir_write(password[3]+33);delay(DELAY_TIME3);
-	 ir_write(user[0]+33);delay(DELAY_TIME3);
-	 ir_write(user[1]+33);delay(DELAY_TIME3);
-	 ir_write(user[2]+33);delay(DELAY_TIME3);
-	 ir_write(user[3]+33);delay(DELAY_TIME3);
+	 ir_write(password[0]+0x33);delay(DELAY_TIME3);
+	 ir_write(password[1]+0x33);delay(DELAY_TIME3);
+	 ir_write(password[2]+0x33);delay(DELAY_TIME3);
+	 ir_write(password[3]+0x33);delay(DELAY_TIME3);
+	 ir_write(user[0]+0x33);delay(DELAY_TIME3);
+	 ir_write(user[1]+0x33);delay(DELAY_TIME3);
+	 ir_write(user[2]+0x33);delay(DELAY_TIME3);
+	 ir_write(user[3]+0x33);delay(DELAY_TIME3);
 	for (i=0;i<datal;i++){
 	 	if(data[i]>204){
 			ir_write(data[i]-205);delay(DELAY_TIME3);
@@ -804,12 +814,7 @@ void irreadtest(){
 	}
 	do{k=key(0);}while(k==0);
 }
-void swap(char *data1,char *data2){
-	int i;
-	i=data1;
-	data1=data2;
-	data2=i;
-}
+
 /*=================================================================================
 函数:	红外通讯
 参数:	*pbsbm为电能量数据标识(通信规约),*data存放读出数据,*resu为红外通讯是否成功标志,psxh为重读书据时显示正在读取的条目

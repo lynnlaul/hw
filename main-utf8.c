@@ -24,8 +24,8 @@ uchar password[4];
 
 int ir_read_data_07();
 
-void ir_11_data_07(int *dataflag);
-void ir_14_data_07(int *dataflag);
+void ir_11_data_07(uchar *dataflag);
+void ir_14_data_07(uchar *dataflag);
 void inputaddr();
 void asc2digi();
 void print_info();
@@ -160,9 +160,9 @@ void readaddr(){
 
 ==================================================================================*/
 void inputaddr(){
-	uchar addr[12];;
-	int b=11;
-	int i, x;
+	uchar addr[12];
+	uchar box[12];
+	int i, c;
 	cls();
 	moveto(3, 4); 	   putstr("请输入电表地址");
 	moveto(10,4);
@@ -187,19 +187,23 @@ void inputaddr(){
 		i--;
 	}
 
-	i=addr[0];addr[0]=addr[10];addr[10]=i;
-	i=addr[1];addr[1]=addr[11];addr[11]=i;
-	i=addr[2];addr[2]=addr[8];addr[8]=i;
-	i=addr[3];addr[3]=addr[9];addr[9]=i;
-	i=addr[4];addr[4]=addr[6];addr[6]=i;
-	i=addr[5];addr[5]=addr[7];addr[7]=i;
+	for(c=11;c!=-1;c--){
+			box[c]=0x00;
+		}
+
+	while(i!=-1){
+		box[c]=addr[i];
+		i--;
+		c++;
+	}
+
 
 	for(i=0;i!=6;i++){
 		Iaddr[i]=0x00;
 	}
 
 	for (i = 0; i != 6; i++) {
-		asc2digi(Iaddr,addr,i);//print_info(Iaddr[i]);print_info(addr[2*i+1]);
+		asc2digi(Iaddr,box,i);//print_info(Iaddr[i]);print_info(addr[2*i+1]);
 	}
 	selectprj();
 }
@@ -351,8 +355,8 @@ void cb(){
 
 
 void zxyg(){
-	int flag[4];
-	int i;
+	uchar flag[4];
+	uchar i;
 	flag[0]=0x00;
 	flag[1]=0x01;
 	flag[2]=0xFF;
@@ -370,8 +374,8 @@ void zxyg(){
 
 }
 void rdjsj(){
-	int flag[4];
-	int i;
+	uchar flag[4];
+	uchar i;
 	flag[0]=0x05;
 	flag[1]=0x06;
 	flag[2]=0x00;
@@ -388,8 +392,8 @@ void rdjsj(){
 
 
 void rdjdn(){
-	int flag[4];
-		int i;
+	uchar flag[4];
+		uchar i;
 		flag[0]=0x05;
 		flag[1]=0x06;
 		flag[2]=0x01;
@@ -632,7 +636,7 @@ void print_info(int i ){
 /*=======================================================================
    函数 : 发送07规约读电能表报文，datafalg为数据标识。电表地址为全局变量Iaddr[6]
  =======================================================================*/
- void ir_11_data_07(int *dataflag)
+ void ir_11_data_07(uchar *dataflag)
  {
 	long int cs;
 	int i;

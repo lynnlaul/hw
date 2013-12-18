@@ -81,10 +81,10 @@ start:
 			moveto(12, 1);   putstr("[F2] 退出");
 			do{k=key(0);}while(k!=0x31&&k!=0x32&&k!=0x89); // 判断输入的键值,若输入的不是'1','2','3','4'或'F2'则继续等待输入
 			switch(k){
-				case '1': readaddr();break;
-				case '2': inputaddr();break;
+				case '1': k=0;readaddr();break;
+				case '2': k=0;inputaddr();break;
 			}
-			if (k == 0x89) break;
+			if (k == 0x89) k=0;break;
 		}
 	}
 }
@@ -140,9 +140,7 @@ void readaddr(){
 		moveto(2,3);putstr("电表地址：");
 		moveto(3,2);
 		for(x=5;x!=-1;x--){
-			Iaddr[x]=data[i+6-x];//print_info(data[x]);
-		}
-		for(x=0;x!=6;x++){
+			Iaddr[x]=data[i+1+x];
 			putchhex(Iaddr[x]);
 		}
 
@@ -162,7 +160,7 @@ void readaddr(){
 void inputaddr(){
 	uchar addr[12];
 	uchar box[12];
-	int i, c;
+	char i, c;
 	cls();
 	moveto(3, 4); 	   putstr("请输入电表地址");
 	moveto(10,4);
@@ -187,22 +185,27 @@ void inputaddr(){
 		i--;
 	}
 
-	for(c=11;c!=-1;c--){
-			box[c]=0x00;
-		}
+	for(c=0;c!=12;c++){
+		box[c]=0x00;
+	}
 
-	while(i!=-1){
-		box[c]=addr[i];
+
+	c=11;
+	while(i>-1){
+		box[c]=addr[i];print_info(box[c]);
 		i--;
-		c++;
+		c--;
 	}
 
-
-	for(i=0;i!=6;i++){
-		Iaddr[i]=0x00;
-	}
+	i=box[0];box[0]=box[10];box[10]=i;
+	i=box[1];box[1]=box[11];box[11]=i;
+	i=box[2];box[2]=box[8];box[8]=i;
+	i=box[3];box[3]=box[9];box[9]=i;
+	i=box[4];box[4]=box[6];box[6]=i;
+	i=box[5];box[5]=box[7];box[7]=i;
 
 	for (i = 0; i != 6; i++) {
+		Iaddr[i]=0x00;
 		asc2digi(Iaddr,box,i);//print_info(Iaddr[i]);print_info(addr[2*i+1]);
 	}
 	selectprj();
@@ -508,17 +511,17 @@ start1:	cls();
 start2:
 	cls();
 	moveto(3,4);
-	putstr("正在发送...");
 	gettime(data);
-	shijian[0]=data[6];
-	shijian[1]=data[7];
-	shijian[2]=data[3];
-	shijian[3]=data[4];
-	shijian[4]=data[0];
-	shijian[5]=data[1];
+	shijian[0]=data[6];print_info(data[6]);
+	shijian[1]=data[7];print_info(data[7]);
+	shijian[2]=data[3];print_info(data[3]);
+	shijian[3]=data[4];print_info(data[4]);
+	shijian[4]=data[0];print_info(data[0]);
+	shijian[5]=data[1];print_info(data[1]);
 
 	asc2digi(data,shijian,i);
 start3:
+	putstr("正在发送...");
 	dataflag[0]=0x02;
 	dataflag[1]=0x01;
 	dataflag[2]=0x00;
@@ -660,7 +663,7 @@ void print_info(int i ){
 	ir_write(0x68);delay(DELAY_TIME3);
 	ir_write(0x11);delay(DELAY_TIME3);
 	ir_write(0x04);delay(DELAY_TIME3);
-	for (i=3; i!=-1; i--)
+	for (i=0; i!=4; i++)
 	{
 		if(dataflag[i]+0x33>255)
 		{ir_write(dataflag[i]+0x33-0x100);delay(DELAY_TIME3);}
@@ -681,7 +684,7 @@ void ir_14_data_07(uchar *dataflag)
 	uchar i;
 	ir_init(B1200,0x2B,UART_ON);//初始化红外口
 	//dleay1();
-	cs=0x68+Iaddr[0]+Iaddr[i]+Iaddr[2]+Iaddr[3]+Iaddr[4]+Iaddr[5]+0x68+0x14+datal+4+dataflag[0]+0X33+dataflag[1]+0x33+dataflag[2]+0x33+dataflag[3]+0x33;//提前计算校验和；
+	cs=0x68+Iaddr[0]+Iaddr[1]+Iaddr[2]+Iaddr[3]+Iaddr[4]+Iaddr[5]+0x68+0x14+datal+12+dataflag[0]+0x33+dataflag[1]+0x33+dataflag[2]+0x33+dataflag[3]+0x33+password[0]+0x33+password[1]+0x33+password[2]+0x33+password[3]+0x33+user[0]+0x63+user[1]+0x63+user[2]+0x63+user[3]+0x63;//提前计算校验和；
 	for(i=0;i<datal;i++){
 		cs=cs+data[i];
 		cs=cs+0x33;
@@ -712,10 +715,10 @@ void ir_14_data_07(uchar *dataflag)
 	 ir_write(password[1]+0x33);delay(DELAY_TIME3);
 	 ir_write(password[2]+0x33);delay(DELAY_TIME3);
 	 ir_write(password[3]+0x33);delay(DELAY_TIME3);
-	 ir_write(user[0]+0x33);delay(DELAY_TIME3);
-	 ir_write(user[1]+0x33);delay(DELAY_TIME3);
-	 ir_write(user[2]+0x33);delay(DELAY_TIME3);
-	 ir_write(user[3]+0x33);delay(DELAY_TIME3);
+	 ir_write(user[0]+0x63);delay(DELAY_TIME3);
+	 ir_write(user[1]+0x63);delay(DELAY_TIME3);
+	 ir_write(user[2]+0x63);delay(DELAY_TIME3);
+	 ir_write(user[3]+0x63);delay(DELAY_TIME3);
 	for (i=0;i<datal;i++){
 	 	if(data[i]>204){
 			ir_write(data[i]-205);delay(DELAY_TIME3);
